@@ -48,7 +48,7 @@ public class PendingContactFactoryImplTest extends BrambleMockTestCase {
 
 	@Test(expected = FormatException.class)
 	public void testRejectsSyntacticallyInvalidLink() throws Exception {
-		pendingContactFactory.createPendingContact("briar://potato", alias);
+		pendingContactFactory.createPendingContact("kich://potato", alias);
 	}
 
 	@Test
@@ -81,7 +81,7 @@ public class PendingContactFactoryImplTest extends BrambleMockTestCase {
 
 	@Test
 	public void testAcceptsValidLinkWithPrefix() throws Exception {
-		testAcceptsValidLink("briar://" + encodeLink());
+		testAcceptsValidLink("kich://" + encodeLink());
 	}
 
 	@Test
@@ -91,7 +91,7 @@ public class PendingContactFactoryImplTest extends BrambleMockTestCase {
 
 	@Test
 	public void testAcceptsValidLinkWithPrefixAndRubbish() throws Exception {
-		testAcceptsValidLink("before briar://" + encodeLink() + " after");
+		testAcceptsValidLink("before kich://" + encodeLink() + " after");
 	}
 
 	private void testAcceptsValidLink(String link) throws Exception {

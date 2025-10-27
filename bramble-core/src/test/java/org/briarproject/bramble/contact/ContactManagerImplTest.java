@@ -202,7 +202,7 @@ public class ContactManagerImplTest extends BrambleMockTestCase {
 	@Test
 	public void testGetHandshakeLink() throws Exception {
 		Transaction txn = new Transaction(null, true);
-		String link = "briar://" + getRandomBase32String(BASE32_LINK_BYTES);
+		String link = "kich://" + getRandomBase32String(BASE32_LINK_BYTES);
 
 		context.checking(new DbExpectations() {{
 			oneOf(db).transactionWithResult(with(true), withDbCallable(txn));

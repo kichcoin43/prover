@@ -2,26 +2,28 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="wrap_content"
+	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="@color/window_background"
-	android:fillViewport="true"
-	android:orientation="vertical">
+	android:background="#000000"
+	android:fillViewport="true">
 
 	<androidx.constraintlayout.widget.ConstraintLayout
-		android:layout_width="wrap_content"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
 
 		<com.google.android.material.navigation.NavigationView
 			android:id="@+id/navigation"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:background="@color/window_background"
+			android:layout_width="392dp"
+			android:layout_height="625dp"
+			android:background="#000000"
 			app:elevation="0dp"
 			app:headerLayout="@layout/navigation_header"
 			app:itemBackground="@drawable/navigation_item_background"
-			app:itemIconTint="?attr/colorControlNormal"
-			app:itemTextColor="?android:textColorPrimary"
+			app:itemIconTint="@color/action_bar_text"
+			app:itemTextColor="@color/briar_text_link_inverse"
+			app:layout_constraintBottom_toTopOf="@+id/spacer"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.0"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent"
 			app:menu="@menu/navigation_drawer" />
@@ -30,10 +32,11 @@
 			android:id="@+id/spacer"
 			android:layout_width="0dp"
 			android:layout_height="0dp"
-			app:layout_constraintBottom_toTopOf="@+id/transports"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.0"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/navigation"
-			app:layout_constraintVertical_weight="1" />
+			app:layout_constraintTop_toBottomOf="@+id/navigation" />
 
 		<include
 			android:id="@+id/transports"
@@ -41,10 +44,18 @@
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toEndOf="@+id/navigation"
+			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/spacer"
 			tools:layout_height="75dp" />
+
+		<!-- Barrier без layout_width и layout_height -->
+		<androidx.constraintlayout.widget.Barrier
+			android:id="@+id/barrier"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:barrierDirection="bottom"
+			app:constraint_referenced_ids="transports" />
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 

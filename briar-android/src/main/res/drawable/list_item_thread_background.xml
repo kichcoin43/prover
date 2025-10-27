@@ -3,7 +3,7 @@
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<item
-		android:drawable="@color/thread_item_background"
+		android:drawable="@color/action_bar_text"
 		android:state_activated="false"/>
 
 	<item

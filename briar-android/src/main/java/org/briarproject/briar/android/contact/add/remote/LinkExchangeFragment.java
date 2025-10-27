@@ -162,7 +162,7 @@ public class LinkExchangeFragment extends BaseFragment {
 			String linkWithoutSchema = matcher.group(2);
 			// Check also if this is our own link. This was loaded already,
 			// because it enables the Continue button which is the only caller.
-			if (("briar://" + linkWithoutSchema)
+			if (("kich://" + linkWithoutSchema)
 					.equals(viewModel.getHandshakeLink().getValue())) {
 				linkInputLayout.setError(getString(R.string.own_link_error));
 				linkInput.requestFocus();

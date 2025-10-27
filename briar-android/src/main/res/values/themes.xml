@@ -6,13 +6,13 @@
 		<item name="colorOnPrimary">@color/md_theme_onPrimary</item>
 		<item name="colorPrimaryContainer">@color/md_theme_primary</item>
 		<item name="colorOnPrimaryContainer">@color/md_theme_onPrimary</item>
-		<item name="colorSecondary">@color/md_theme_secondary</item>
+		<item name="colorSecondary">@color/briar_brand_blue</item>
 		<item name="colorOnSecondary">@color/md_theme_onSecondary</item>
 		<item name="colorTertiary">@color/md_theme_tertiary</item>
 		<item name="colorOnTertiary">@color/md_theme_onTertiary</item>
 		<item name="colorTertiaryContainer">@color/md_theme_tertiaryContainer</item>
 		<item name="colorOnTertiaryContainer">@color/md_theme_onTertiaryContainer</item>
-		<item name="android:colorBackground">@color/window_background</item>
+		<item name="android:colorBackground">@color/action_bar_text</item>
 		<item name="colorOnBackground">@color/md_theme_onBackground</item>
 		<item name="colorSurface">@color/card_background</item>
 		<item name="colorOnSurface">@color/md_theme_onSurface</item>
@@ -55,7 +55,7 @@
 		<item name="buttonBarNeutralButtonStyle">@style/BriarButtonFlat.Neutral</item>
 		<item name="buttonBarNegativeButtonStyle">@style/BriarButtonFlat.Negative</item>
 		<item name="android:textColorLink">@color/briar_text_link</item>
-		<item name="android:windowBackground">@color/window_background</item>
+		<item name="android:windowBackground">@color/briar_night_800</item>
 		<item name="android:windowAnimationStyle">@style/DialogAnimation</item>
 		<item name="android:filterTouchesWhenObscured">true</item>
 	</style>
@@ -89,13 +89,13 @@
 
 	<style name="OnboardingDialogTheme" parent="BriarDialogTheme">
 		<item name="android:background">@color/md_theme_primaryContainer</item>
-		<item name="android:textColorPrimary">@color/md_theme_onPrimaryContainer</item>
+		<item name="android:textColorPrimary">@color/action_bar_text</item>
 	</style>
 
 	<style name="TranslucentTheme" parent="Theme.Material3.DayNight.NoActionBar">
 		<item name="android:colorBackgroundCacheHint">@null</item>
 		<item name="android:windowAnimationStyle">@android:style/Animation</item>
-		<item name="android:windowBackground">@android:color/transparent</item>
+		<item name="android:windowBackground">@color/action_bar_text</item>
 		<item name="android:windowContentOverlay">@null</item>
 		<item name="android:windowIsTranslucent">true</item>
 		<item name="android:windowNoTitle">true</item>

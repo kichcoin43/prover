@@ -1,5 +1,6 @@
 package org.briarproject.briar.android;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Application;
 import android.app.Notification;
@@ -275,14 +276,17 @@ class AndroidNotificationManagerImpl implements AndroidNotificationManager,
 		return getForegroundNotification(false);
 	}
 
+	@SuppressLint("ResourceType")
 	@UiThread
 	private Notification getForegroundNotification(boolean locked) {
 		int title = locked ? R.string.lock_is_locked :
 				R.string.ongoing_notification_title;
 		int text = locked ? R.string.lock_tap_to_unlock :
 				R.string.ongoing_notification_text;
-		int icon = locked ? R.drawable.notification_lock :
-				R.drawable.notification_ongoing;
+		int icon;
+		if (locked) icon = R.drawable.notification_lock;
+		else icon = R.drawable.notification_ongoing;
+
 		// Ongoing foreground notification that shows BriarService is running
 		NotificationCompat.Builder b =
 				new NotificationCompat.Builder(appContext, ONGOING_CHANNEL_ID);
@@ -292,11 +296,32 @@ class AndroidNotificationManagerImpl implements AndroidNotificationManager,
 		b.setContentText(appContext.getText(text));
 		b.setWhen(0); // Don't show the time
 		b.setOngoing(true);
+
+		// ДОБАВЛЯЕМ БОЛЬШОЙ СТИЛЬ ДЛЯ УВЕЛИЧЕНИЯ РАЗМЕРА
+		NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
+		bigTextStyle.setBigContentTitle(appContext.getText(title));
+		bigTextStyle.bigText(appContext.getText(text));
+		b.setStyle(bigTextStyle);
+
+		// Увеличиваем важность
+		b.setPriority(NotificationCompat.PRIORITY_HIGH);
+
+		// Для Android 8.0+ устанавливаем высокую важность канала
+		if (SDK_INT >= 26) {
+			NotificationChannel channel = new NotificationChannel(ONGOING_CHANNEL_ID,
+					appContext.getString(R.drawable.notification_ongoing),
+					NotificationManager.IMPORTANCE_HIGH);
+			channel.setLockscreenVisibility(VISIBILITY_SECRET);
+			channel.setDescription(appContext.getString(R.drawable.notification_ongoing));
+			notificationManager.createNotificationChannel(channel);
+			b.setChannelId(ONGOING_CHANNEL_ID);
+		}
+
 		Intent i = new Intent(appContext, SplashScreenActivity.class);
 		b.setContentIntent(getActivity(appContext, 0, i, getImmutableFlags(0)));
 		b.setCategory(CATEGORY_SERVICE);
 		b.setVisibility(VISIBILITY_SECRET);
-		b.setPriority(PRIORITY_MIN);
+
 		return b.build();
 	}
 

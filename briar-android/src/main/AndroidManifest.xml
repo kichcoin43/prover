@@ -26,11 +26,13 @@
 	<uses-permission android:name="android.permission.USE_FINGERPRINT" />
 	<uses-permission android:name="android.permission.VIBRATE" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
-	<uses-permission
-		android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-		android:maxSdkVersion="18"
-		tools:ignore="ScopedStorage" />
 	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+	<!-- Объединенные разрешения для хранилища -->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+		android:maxSdkVersion="32" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+		android:maxSdkVersion="32" />
 
 	<uses-permission-sdk-23
 		android:name="android.permission.ACCESS_FINE_LOCATION"

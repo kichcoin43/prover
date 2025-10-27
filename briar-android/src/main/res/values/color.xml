@@ -47,19 +47,20 @@
 	<color name="briar_brand_blue">@color/briar_night_700</color>
 	<color name="briar_brand_green">@color/briar_lime_400</color>
 
-	<color name="briar_primary">@color/briar_brand_blue</color>
-	<color name="briar_primary_dark">@color/briar_night_950</color>
+	<color name="briar_primary">@color/briar_blue_900</color>
+	<color name="briar_primary_dark">@color/action_bar_text</color>
 	<color name="briar_accent">@color/briar_brand_blue</color>
 
-	<color name="window_background">@color/briar_gray_100</color>
-	<color name="card_background">@color/cardview_light_background</color>
+	<color name="window_background">@color/action_bar_text</color>
+	<color name="card_background">@color/action_bar_text</color>
 	<color name="item_background_highlight">@color/briar_gray_200</color>
 	<color name="briar_warning_background">@color/briar_red_500</color>
-	<color name="action_bar_text">@android:color/white</color>
+	<color name="action_bar_text">@color/briar_gray_100</color>
 	<color name="private_message_date_inverse">@color/briar_gray_200</color>
 	<color name="forum_avatar_shadow">#99000000</color>
 
 	<color name="color_primary">#dd000000</color>
+	<color name="black">#000000</color>
 
 	<color name="msg_in">@android:color/white</color>
 	<color name="msg_out">@color/briar_blue_400</color>
@@ -86,7 +87,7 @@
 	<color name="briar_text_secondary_inverse">#b4ffffff</color>
 	<color name="briar_text_tertiary_inverse">#80ffffff</color>
 
-	<color name="preference_category_background">@color/window_background</color>
+	<color name="preference_category_background">@color/black</color>
 
 	<color name="briar_button_text_positive">@color/briar_blue_400</color>
 	<color name="briar_button_text_neutral">@color/briar_night_500</color>
@@ -94,8 +95,8 @@
 	<color name="briar_button_text_disabled">#28000000</color>
 
 	<color name="thread_indicator">@color/briar_gray_500</color>
-	<color name="thread_item_background">@color/window_background</color>
-	<color name="thread_item_highlight">@android:color/white</color>
+	<color name="thread_item_background">@color/action_bar_text</color>
+	<color name="thread_item_highlight">@color/action_bar_text</color>
 
 	<color name="divider">@color/briar_gray_200</color>
 

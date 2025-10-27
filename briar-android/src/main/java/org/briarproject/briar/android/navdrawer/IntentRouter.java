@@ -17,7 +17,7 @@ class IntentRouter {
 	static void handleExternalIntent(Context ctx, Intent i) {
 		String action = i.getAction();
 		// add remote contact with clicked briar:// link
-		if (ACTION_VIEW.equals(action) && "briar".equals(i.getScheme())) {
+		if (ACTION_VIEW.equals(action) && "kich".equals(i.getScheme())) {
 			redirect(ctx, i, AddContactActivity.class);
 		}
 		// add remote contact with shared briar:// link

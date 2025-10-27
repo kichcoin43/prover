@@ -7,13 +7,15 @@
 	android:orientation="vertical"
 	tools:showIn="@layout/navigation_menu">
 
-	<View style="@style/Divider.Horizontal" />
+	<View style="@color/black"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
 
 	<GridView
 		android:id="@+id/transportsView"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:listSelector="@android:color/transparent"
+		android:layout_width="142dp"
+		android:layout_height="55dp"
+		android:listSelector="@color/black"
 		android:numColumns="3"
 		tools:listitem="@layout/list_item_transport" />
 

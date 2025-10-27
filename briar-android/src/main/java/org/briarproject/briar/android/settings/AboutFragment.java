@@ -1,5 +1,6 @@
 package org.briarproject.briar.android.settings;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -46,6 +47,7 @@ public class AboutFragment extends Fragment {
 				false);
 	}
 
+	@SuppressLint("StringFormatInvalid")
 	@Override
 	public void onStart() {
 		super.onStart();
@@ -56,35 +58,13 @@ public class AboutFragment extends Fragment {
 		torVersion = requireActivity().findViewById(R.id.TorVersion);
 		torVersion.setText(
 				getString(R.string.tor_version, BuildConfig.TorVersion));
-		briarWebsite = requireActivity().findViewById(R.id.BriarWebsite);
-		briarSourceCode = requireActivity().findViewById(R.id.BriarSourceCode);
-		briarChangelog = requireActivity().findViewById(R.id.BriarChangelog);
-		briarPrivacyPolicy =
-				requireActivity().findViewById(R.id.BriarPrivacyPolicy);
-		briarWebsite.setOnClickListener(View -> {
-			String url = "https://briarproject.org/";
-			goToUrl(url);
-		});
-		briarSourceCode.setOnClickListener(View -> {
-			String url = "https://code.briarproject.org/briar/briar";
-			goToUrl(url);
-		});
-		briarChangelog.setOnClickListener(View -> {
-			String url =
-					"https://code.briarproject.org/briar/briar/-/wikis/changelog";
-			goToUrl(url);
-		});
-		briarPrivacyPolicy.setOnClickListener(View -> {
-			String url =
-					"https://briarproject.org/privacy-policy/";
-			goToUrl(url);
-		});
-	}
+
+		}
 
 	private void goToUrl(String url) {
 		Intent i = new Intent(ACTION_VIEW);
 		i.setData(Uri.parse(url));
 		tryToStartActivity(requireActivity(), i);
+	};
 	}
 
-}

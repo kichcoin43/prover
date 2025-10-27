@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-	<item android:drawable="@color/item_background_highlight" android:state_checked="true"/>
-	<item android:drawable="@android:color/transparent" android:state_checked="false"/>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:ignore="ExtraText">
+
+	<item android:state_checked="true">
+		<shape android:shape="rectangle">
+			<solid android:color="@color/briar_blue_800"/>
+		</shape>
+	</item>
+	<item android:state_checked="false">
+		<shape android:shape="rectangle">
+			<solid android:color="#F1000000"/>
+		</shape>
+	</item>
+
 </selector>
