@@ -322,8 +322,6 @@
   <string name="pending_contact_updated_toast">Ожидающий контакт обновлен</string>
   <string name="info_both_must_enter_links">Вы должны добавить ссылки друг друга</string>
   <!--Peer trust levels-->
-  <string name="peer_trust_level_unverified">Неверифицированный контакт</string>
-  <string name="peer_trust_level_verified">Верифицированный контакт</string>
   <string name="peer_trust_level_ourselves">Я</string>
   <string name="peer_trust_level_stranger">Незнакомец</string>
   <!--Introductions-->

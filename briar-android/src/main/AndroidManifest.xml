@@ -529,7 +529,8 @@
 			android:theme="@style/BriarTheme">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="org.briarproject.briar.android.settings.SettingsActivity" />
+				android:value="org.briarproject.briar.android.settings.SettingsActivity"
+				android:enableOnBackInvokedCallback="true"/>
 		</activity>
 
 	</application>

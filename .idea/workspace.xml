@@ -1,0 +1,1810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="4" />
+  </component>
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="_device_class_phone" />
+        <device id="pixel_4" />
+        <device id="pixel_6_pro" />
+        <device id="pixel_7" />
+        <device id="pixel_9a" />
+        <device id="pixel_9" />
+        <locale>ru</locale>
+      </config>
+    </shared>
+    <layouts>
+      <layout url="file://$USER_HOME$/.gradle/caches/8.14.3/transforms/1e4eb031da6a6aa8df72d61773ef93a9/transformed/appcompat-1.5.0/res/layout/select_dialog_singlechoice_material.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$USER_HOME$/.gradle/caches/8.14.3/transforms/f874c60117d46d0c232c3ed13a48cb6d/transformed/preference-1.2.1/res/layout/image_frame.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$USER_HOME$/.gradle/caches/8.14.3/transforms/f874c60117d46d0c232c3ed13a48cb6d/transformed/preference-1.2.1/res/layout/preference_material.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_blog.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_contact_added.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_forum.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_hotspot.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_mailbox.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_private_group.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_private_message.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_signout.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-ldrtl/social_send_now_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/contact_connected.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/contact_disconnected.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/ic_our_identity.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/il_add_contact_remote.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/il_add_contact_remote_nickname.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/il_bluetooth_connect.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/il_mailbox.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/il_mailbox_setup.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/il_qr_code.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/il_share_app.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/il_transfer_data.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/il_transfer_data_receive.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/il_transfer_data_send.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable-night/navigation_item_background.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/action_delete_black.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/action_delete_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/alerts_and_states_error.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/blogs.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/border_qr_scanner.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/bubble.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/bubble_completed.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/bubble_current.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/bubble_future.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/bubble_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/chevron_down_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/chevron_up_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/contact_connected.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/contact_disconnected.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/contact_offline.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/contact_online.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/forum_item_create_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_add_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_arrow_back.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_backspace.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_bomb.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_call_made.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_call_received.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_check_circle_outline.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_check_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_circle_small.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_close.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_connect_without_contact.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_contact_introduction.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_contacts.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_content_copy.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_content_paste.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_crash.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_emoji_toggle.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_feedback.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_forums_black_24dp.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_fullscreen_black_48dp.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_fullscreen_exit_black_48dp.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_group.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_group_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_help_outline_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_image.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_image_broken.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_image_missing.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_image_off.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_info_dark.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_info_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_keyboard.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_link_menu.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_mailbox.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_more_vert_accent.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_nearby.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_notifications.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_our_identity.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_person.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_portable_wifi_off.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_qr_code.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_repeat.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_rss_feed.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_security.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_settings_black.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_settings_brightness.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_settings_security.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_settings_share.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_settings_share_link.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_signout.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_visibility.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_visibility_off.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_visibility_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/ic_wifi_tethering.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_add_contact_remote.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_add_contact_remote_nickname.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_bluetooth_connect.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_empty_state_blogs.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_empty_state_contact_list.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_empty_state_forum_list.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_empty_state_group_list.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_mailbox.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_mailbox_setup.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_qr_code.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_qr_code_error.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_qr_code_nearby.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_share_app.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_transfer_data.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_transfer_data_receive.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/il_transfer_data_send.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/introduction_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/level_indicator_circle.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/list_item_background_selectable.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/list_item_thread_background.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/message_delivered.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/message_sent.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/message_stored.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/msg_in.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/msg_in_top.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/msg_out.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/msg_out_top.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/msg_status_bubble.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/navigation_item_background.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/notice_in.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/notice_in_bottom.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/notice_out.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/notice_out_bottom.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/social_send_now_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/social_share_blue.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/social_share_white.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/startup_lock.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/startup_migration.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/trust_indicator_unknown.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/trust_indicator_unverified.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/drawable/trust_indicator_verified.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout-h650dp/navigation_header.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout-land/fragment_keyagreement_id.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_change_password.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_conversation.xml">
+        <config>
+          <theme>@style/BriarTheme.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_create_forum.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_dev_report.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_expired.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_expired_old_android.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_fragment_container.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_fragment_container_toolbar.xml">
+        <config>
+          <theme>@style/BriarTheme.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_image.xml">
+        <config>
+          <theme>@style/BriarTheme.ActionBarOverlay</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_mailbox.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_nav_drawer.xml">
+        <config>
+          <theme>@style/BriarTheme.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_panic_preferences.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_reveal_contacts.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_rss_feed_manage.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_settings.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_sharing_status.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_test_data.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_threaded_conversation.xml">
+        <config>
+          <theme>@style/BriarTheme.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_transports.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_unlock.xml">
+        <config>
+          <theme>@style/BriarTheme.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/activity_write_blog_post.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/author_view.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/briar_button.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/briar_recycler_view.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/checkbox.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/contact_avatar_status.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/dialog_screen_filter.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/emoji_text_input_view.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_about.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_alias_dialog.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_blog.xml">
+        <config>
+          <theme>@style/BriarTheme.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_blog_post.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_bluetooth_intro.xml">
+        <config>
+          <theme>@style/BriarDialogTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_bluetooth_progress.xml">
+        <config>
+          <theme>@style/BriarDialogTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_confirm_avatar_dialog.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_contact_list.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_conversation_settings.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_crash.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_create_group.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_error.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_error_contact_exchange.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_final.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_forum_list.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_hotspot_error.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_hotspot_fallback.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_hotspot_help.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_hotspot_manual.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_hotspot_tabs.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_image.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_keyagreement_id.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_keyagreement_qr.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_link_dialog.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_link_exchange.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_mailbox_connecting.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_mailbox_error_wizard.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_mailbox_error_wizard_access.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_mailbox_scan.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_mailbox_setup_download.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_mailbox_setup_intro.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_mailbox_status.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_message.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_nickname.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_offline.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_onboarding_full.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_open_database.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_password.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_progress.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_reblog.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_report_form.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_rss_feed_import.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_rss_feed_manage.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_setup_author_name.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_setup_doze.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_setup_password.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_sign_out.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_transfer_data_chooser.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_transfer_data_receive.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/fragment_transfer_data_send.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/image_preview.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/info_view.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/introduction_message.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_blog_comment.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_blog_post.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_contact.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_contact_small.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_conversation_msg_image.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_conversation_msg_image_text.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_conversation_msg_in.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_conversation_msg_in_content.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_conversation_msg_out.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_conversation_notice_in.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_conversation_notice_out.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_conversation_request.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_conversation_top_notice_in.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_conversation_top_notice_out.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_crash.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_forum.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_group.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_group_join_notice.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_group_member.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_image.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_image_preview.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_image_preview_single.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_invitations.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_pending_contact.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_revealable_contact.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_rss_feed.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_selectable_contact.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_thread.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_transport.xml">
+        <config>
+          <theme>@style/PopupMenu</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_transport_card.xml">
+        <config>
+          <theme>@style/TranslucentTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/navigation_header.xml">
+        <config>
+          <state>landscape</state>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/navigation_menu.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/power_view.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/preference_avatar.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/preference_switch.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/preferences_category.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/qr_code_view.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/splash.xml">
+        <config>
+          <night>night</night>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/text_avatar_view.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/text_input_view.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/text_input_view_large.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/toolbar.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/transports_list.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/unread_message_button.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/layout/view_composite_send_button.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/blogs_blog_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/blogs_feed_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/contact_list_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/contact_selection_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/conversation_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/conversation_message_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/dev_report_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/forum_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/forum_list_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/forum_list_item_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/group_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/group_reveal_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/groups_list_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/help_action.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/hotspot_help_action.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/image_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/navigation_drawer.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/rss_feed_import_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/menu/rss_feed_manage_actions.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/mipmap-anydpi-v26/ic_launcher.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/xml/panic_preferences.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/xml/settings.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/xml/settings_connections.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/xml/settings_display.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/xml/settings_notifications.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/briar-android/src/main/res/xml/settings_security.xml">
+        <config>
+          <theme>@style/BriarTheme</theme>
+        </config>
+      </layout>
+    </layouts>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="331c6921-d494-4701-b475-1971b061730a" name="Changes" comment="Merge branch 'tor-0.4.8.19-lyrebird-0.6.2' into 'master'&#10;&#10;Update Tor, Lyrebird and Bouncy Castle&#10;&#10;See merge request briar/briar!1848&#10;Merge branch 'integration-test-fix' into 'main'&#10;&#10;Expose webserver port in AbstractMailbox&#10;&#10;See merge request briar/briar-mailbox!165">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TRANSLATION.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/debug/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/debug/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/java/org/briarproject/briar/android/settings/SecurityFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/java/org/briarproject/briar/android/settings/SecurityFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/java/org/briarproject/briar/android/settings/SettingsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/java/org/briarproject/briar/android/settings/SettingsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/java/org/briarproject/briar/android/splash/ExpiredActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/java/org/briarproject/briar/android/splash/ExpiredActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_lock.png" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_lock.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_ongoing.png" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/drawable-anydpi-v24/notification_ongoing.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/drawable/navigation_drawer_header.png" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/drawable/navigation_drawer_header.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/drawable/navigation_item_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/drawable/navigation_item_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_contact.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/layout/list_item_contact.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/values-night/color.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/values-night/color.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/values-ru/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/values-ru/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/values/color.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/values/color.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/xml/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/xml/settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-android/src/main/res/xml/settings_security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-android/src/main/res/xml/settings_security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-mailbox" beforeDir="false" afterPath="$PROJECT_DIR$/briar-mailbox" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/res/values-v23/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/res/values-v23/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/res/values/attrs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/res/values/attrs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/briar-mailbox/mailbox-android/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\admin\.android\avd\Pixel_9_Pro_XL.avd)]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="briar7" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kichcoin43&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kichcoin43/KICH.git&quot;,
+    &quot;accountId&quot;: &quot;aabbe443-5c2d-4c0a-b943-78f5537c9523&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="_Designer_Tab" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="35ATDDYhDlqkVBKpZfGsQu3oXbH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.briar-android.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "ResourceManagerPrefKey.ResourceType": "STRING",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/admin/AndroidStudioProjects/briar7/briar-android/src/main/res/drawable-anydpi-v24",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "two.files.diff.last.used.file": "C:/Users/admin/Downloads/splash_screen.png"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="javax.swing" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\AndroidStudioProjects\briar7\briar-android\src\main\res\drawable-anydpi-v24" />
+      <recent name="C:\Users\admin\AndroidStudioProjects\briar7\briar-android\src\main\res\drawable-xxhdpi" />
+      <recent name="C:\Users\admin\AndroidStudioProjects\briar7\briar-android\src\main\res\drawable-mdpi" />
+      <recent name="C:\Users\admin\AndroidStudioProjects\briar7\briar-android\src\main\res\drawable-hdpi" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\AndroidStudioProjects\briar7\briar-android\src\main\res\drawable-anydpi-v24" />
+      <recent name="C:\Users\admin\AndroidStudioProjects\briar7\briar-android\src\main\res\drawable" />
+      <recent name="C:\Users\admin\AndroidStudioProjects\briar7\briar-android\src\main\res\drawable-hdpi" />
+      <recent name="C:\Users\admin\AndroidStudioProjects\briar7\briar-android\src\main\res\drawable-xxhdpi" />
+      <recent name="C:\Users\admin\AndroidStudioProjects\briar7\briar-android\src\main\res\drawable-xhdpi" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.briar-android">
+    <configuration name="briar-android" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="briar7.briar-android" />
+      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="331c6921-d494-4701-b475-1971b061730a" name="Changes" comment="" />
+      <created>1762551754581</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762551754581</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Merge branch 'tor-0.4.8.19-lyrebird-0.6.2' into 'master'&#10;&#10;Update Tor, Lyrebird and Bouncy Castle&#10;&#10;See merge request briar/briar!1848&#10;Merge branch 'integration-test-fix' into 'main'&#10;&#10;Expose webserver port in AbstractMailbox&#10;&#10;See merge request briar/briar-mailbox!165">
+      <option name="closed" value="true" />
+      <created>1762772789895</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762772789895</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge branch 'tor-0.4.8.19-lyrebird-0.6.2' into 'master'&#10;&#10;Update Tor, Lyrebird and Bouncy Castle&#10;&#10;See merge request briar/briar!1848&#10;Merge branch 'integration-test-fix' into 'main'&#10;&#10;Expose webserver port in AbstractMailbox&#10;&#10;See merge request briar/briar-mailbox!165" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'tor-0.4.8.19-lyrebird-0.6.2' into 'master'&#10;&#10;Update Tor, Lyrebird and Bouncy Castle&#10;&#10;See merge request briar/briar!1848&#10;Merge branch 'integration-test-fix' into 'main'&#10;&#10;Expose webserver port in AbstractMailbox&#10;&#10;See merge request briar/briar-mailbox!165" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/briar-android/src/main/java/org/briarproject/briar/android/splash/ExpiredActivity.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="play_dynamic_filters_status">
+    <option name="appIdToCheckInfo">
+      <map>
+        <entry key="org.briarproject.briar.android">
+          <value>
+            <CheckInfo lastCheckTimestamp="1762846727555" />
+          </value>
+        </entry>
+        <entry key="org.briarproject.briar.android.debug">
+          <value>
+            <CheckInfo lastCheckTimestamp="1762846727553" />
+          </value>
+        </entry>
+        <entry key="org.briarproject.briar.android.debug.test">
+          <value>
+            <CheckInfo lastCheckTimestamp="1762846727557" />
+          </value>
+        </entry>
+        <entry key="org.briarproject.briar.android.screenshot.debug">
+          <value>
+            <CheckInfo lastCheckTimestamp="1762846727557" />
+          </value>
+        </entry>
+        <entry key="org.briarproject.briar.android.screenshot.debug.test">
+          <value>
+            <CheckInfo lastCheckTimestamp="1762846727555" />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

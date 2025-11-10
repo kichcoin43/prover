@@ -46,7 +46,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 	private static final String PREF_KEY_EXPLODE = "pref_key_explode";
 	private static final String PREF_KEY_MAILBOX = "pref_key_mailbox";
 
-	private static final String DOWNLOAD_URL = "https://briarproject.org/download/";
+	private static final String DOWNLOAD_URL = "https://t.me/+-WtecXg4jLRiM2Ji";
 
 	@Inject
 	ViewModelProvider.Factory viewModelFactory;

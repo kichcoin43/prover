@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools">
@@ -45,7 +46,7 @@
 
 			<intent
 				android:targetClass="org.briarproject.briar.android.panic.PanicPreferencesActivity"
-				android:targetPackage="@string/app_package" />
+				android:targetPackage="@string/app_package"/>
 
 		</Preference>
 

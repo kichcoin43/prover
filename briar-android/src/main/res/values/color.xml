@@ -99,7 +99,9 @@
 	<color name="thread_item_highlight">@color/action_bar_text</color>
 
 	<color name="divider">@color/briar_gray_200</color>
-
+	<!-- Navigation colors for light theme -->
+	<color name="navigation_icon_tint">#DE000000</color>
+	<color name="navigation_text_color">#DE000000</color>
 
 
 	<color name="md_theme_primary">@color/briar_lime_500</color>
