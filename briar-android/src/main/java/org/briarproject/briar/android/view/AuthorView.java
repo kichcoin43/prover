@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import org.briarproject.bramble.api.identity.Author;
@@ -39,183 +40,226 @@ import static org.briarproject.briar.api.identity.AuthorInfo.Status.OURSELVES;
 @UiThread
 public class AuthorView extends ConstraintLayout {
 
-	public static final int NORMAL = 0;
-	public static final int REBLOGGER = 1;
-	public static final int COMMENTER = 2;
-	public static final int LIST = 3;
-	public static final int RSS_FEED = 4;
-	public static final int RSS_FEED_REBLOGGED = 5;
+        public static final int NORMAL = 0;
+        public static final int REBLOGGER = 1;
+        public static final int COMMENTER = 2;
+        public static final int LIST = 3;
+        public static final int RSS_FEED = 4;
+        public static final int RSS_FEED_REBLOGGED = 5;
 
-	private final CircleImageView avatar;
-	private final ImageView avatarIcon;
-	private final TextView authorName;
-	private final Typeface authorNameTypeface;
-	private final TextView date;
-	private final TrustIndicatorView trustIndicator;
+        private final CircleImageView avatar;
+        private final ImageView avatarIcon;
+        private final TextView authorName;
+        private final LottieAnimationView authorEmoji;
+        private final Typeface authorNameTypeface;
+        private final TextView date;
+        private final TrustIndicatorView trustIndicator;
+        @Nullable
+        private org.briarproject.briar.android.emoji.AnimatedEmojiManager emojiManager;
 
-	public AuthorView(Context context, @Nullable AttributeSet attrs) {
-		super(context, attrs);
+        public AuthorView(Context context, @Nullable AttributeSet attrs) {
+                super(context, attrs);
 
-		LayoutInflater inflater = (LayoutInflater) context
-				.getSystemService(LAYOUT_INFLATER_SERVICE);
-		inflater.inflate(R.layout.author_view, this, true);
+                LayoutInflater inflater = (LayoutInflater) context
+                                .getSystemService(LAYOUT_INFLATER_SERVICE);
+                inflater.inflate(R.layout.author_view, this, true);
 
-		avatar = findViewById(R.id.avatar);
-		avatarIcon = findViewById(R.id.avatarIcon);
-		authorName = findViewById(R.id.authorName);
-		authorNameTypeface = authorName.getTypeface();
-		date = findViewById(R.id.dateView);
-		trustIndicator = findViewById(R.id.trustIndicator);
+                avatar = findViewById(R.id.avatar);
+                avatarIcon = findViewById(R.id.avatarIcon);
+                authorName = findViewById(R.id.authorName);
+                authorEmoji = findViewById(R.id.authorEmoji);
+                authorNameTypeface = authorName.getTypeface();
+                date = findViewById(R.id.dateView);
+                trustIndicator = findViewById(R.id.trustIndicator);
+                
+                // Cache the emoji manager to avoid repeated lookups
+                try {
+                        emojiManager = org.briarproject.briar.android.AppModule.getAndroidComponent(
+                                        context).animatedEmojiManager();
+                } catch (Exception e) {
+                        emojiManager = null;
+                }
 
-		TypedArray attributes =
-				context.obtainStyledAttributes(attrs, R.styleable.AuthorView);
-		int persona = attributes.getInteger(R.styleable.AuthorView_persona, 0);
-		setPersona(persona);
-		attributes.recycle();
-	}
+                TypedArray attributes =
+                                context.obtainStyledAttributes(attrs, R.styleable.AuthorView);
+                int persona = attributes.getInteger(R.styleable.AuthorView_persona, 0);
+                setPersona(persona);
+                attributes.recycle();
+        }
 
-	public AuthorView(Context context) {
-		this(context, null);
-	}
+        public AuthorView(Context context) {
+                this(context, null);
+        }
 
-	public void setAuthor(Author author, AuthorInfo authorInfo) {
-		authorName
-				.setText(getContactDisplayName(author, authorInfo.getAlias()));
-		setAvatar(avatar, author.getId(), authorInfo);
+        public void setAuthor(Author author, AuthorInfo authorInfo) {
+                authorName
+                                .setText(getContactDisplayName(author, authorInfo.getAlias()));
+                setAvatar(avatar, author.getId(), authorInfo);
 
-		if (authorInfo.getStatus() != NONE) {
-			trustIndicator.setTrustLevel(authorInfo.getStatus());
-			trustIndicator.setVisibility(VISIBLE);
-		} else {
-			trustIndicator.setVisibility(GONE);
-		}
+                // Show animated emoji if available
+                // Clear any previous animation first
+                authorEmoji.cancelAnimation();
+                authorEmoji.clearAnimation();
+                
+                if (emojiManager != null) {
+                        try {
+                                org.briarproject.briar.android.emoji.AnimatedEmoji emoji;
+                                if (authorInfo.getStatus() == OURSELVES) {
+                                        // Show own emoji for ourselves
+                                        emoji = emojiManager.getOwnEmoji();
+                                } else {
+                                        // Show contact's emoji
+                                        String contactId = author.getId().toString();
+                                        emoji = emojiManager.getUserEmoji(contactId);
+                                }
+                                
+                                if (emoji != null) {
+                                        authorEmoji.setAnimation(emoji.getAssetPath());
+                                        authorEmoji.setVisibility(VISIBLE);
+                                        authorEmoji.playAnimation();
+                                } else {
+                                        authorEmoji.setVisibility(GONE);
+                                }
+                        } catch (Exception e) {
+                                authorEmoji.setVisibility(GONE);
+                        }
+                } else {
+                        authorEmoji.setVisibility(GONE);
+                }
 
-		if (authorInfo.getStatus() == OURSELVES) {
-			authorName.setTypeface(authorNameTypeface, BOLD);
-		} else {
-			authorName.setTypeface(authorNameTypeface, Typeface.NORMAL);
-		}
+                if (authorInfo.getStatus() != NONE) {
+                        trustIndicator.setTrustLevel(authorInfo.getStatus());
+                        trustIndicator.setVisibility(VISIBLE);
+                } else {
+                        trustIndicator.setVisibility(GONE);
+                }
 
-		invalidate();
-		requestLayout();
-	}
+                if (authorInfo.getStatus() == OURSELVES) {
+                        authorName.setTypeface(authorNameTypeface, BOLD);
+                } else {
+                        authorName.setTypeface(authorNameTypeface, Typeface.NORMAL);
+                }
 
-	public static void setAvatar(ImageView v, AuthorId id, AuthorInfo info) {
-		IdenticonDrawable identicon = new IdenticonDrawable(id.getBytes());
-		if (info.getAvatarHeader() == null) {
-			GlideApp.with(v)
-					.clear(v);
-			v.setImageDrawable(identicon);
-		} else {
-			GlideApp.with(v)
-					.load(info.getAvatarHeader())
-					.diskCacheStrategy(DiskCacheStrategy.NONE)
-					.error(identicon)
-					.into(v)
-					.waitForLayout();
-		}
-	}
+                invalidate();
+                requestLayout();
+        }
 
-	public static void setAvatar(ImageView v, ContactItem contactItem) {
-		AuthorId authorId = contactItem.getContact().getAuthor().getId();
-		setAvatar(v, authorId, contactItem.getAuthorInfo());
-	}
+        public static void setAvatar(ImageView v, AuthorId id, AuthorInfo info) {
+                IdenticonDrawable identicon = new IdenticonDrawable(id.getBytes());
+                if (info.getAvatarHeader() == null) {
+                        GlideApp.with(v)
+                                        .clear(v);
+                        v.setImageDrawable(identicon);
+                } else {
+                        GlideApp.with(v)
+                                        .load(info.getAvatarHeader())
+                                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                                        .error(identicon)
+                                        .into(v)
+                                        .waitForLayout();
+                }
+        }
 
-	public void setDate(long date) {
-		this.date.setText(UiUtils.formatDate(getContext(), date));
+        public static void setAvatar(ImageView v, ContactItem contactItem) {
+                AuthorId authorId = contactItem.getContact().getAuthor().getId();
+                setAvatar(v, authorId, contactItem.getAuthorInfo());
+        }
 
-		invalidate();
-		requestLayout();
-	}
+        public void setDate(long date) {
+                this.date.setText(UiUtils.formatDate(getContext(), date));
 
-	public void setAuthorClickable(OnClickListener listener) {
-		setClickable(true);
-		int res =
-				resolveAttribute(getContext(), R.attr.selectableItemBackground);
-		setBackgroundResource(res);
-		setOnClickListener(listener);
-	}
+                invalidate();
+                requestLayout();
+        }
 
-	public void setAuthorNotClickable() {
-		setOnClickListener(null);
-		setClickable(false);
-		setFocusable(false);
-		setBackgroundResource(0);
-	}
+        public void setAuthorClickable(OnClickListener listener) {
+                setClickable(true);
+                int res =
+                                resolveAttribute(getContext(), R.attr.selectableItemBackground);
+                setBackgroundResource(res);
+                setOnClickListener(listener);
+        }
 
-	/**
-	 * Styles this view for a different persona.
-	 * <p>
-	 * Attention: RSS_FEED and RSS_FEED_REBLOGGED change the avatar
-	 * and override the one set by
-	 * {@link AuthorView#setAuthor(Author, AuthorInfo)}.
-	 */
-	public void setPersona(int persona) {
-		switch (persona) {
-			case NORMAL:
-				avatarIcon.setVisibility(INVISIBLE);
-				date.setVisibility(VISIBLE);
-				setAvatarSize(R.dimen.blogs_avatar_normal_size);
-				setTextSize(authorName, R.dimen.text_size_small);
-				break;
-			case REBLOGGER:
-				avatarIcon.setVisibility(VISIBLE);
-				date.setVisibility(VISIBLE);
-				setAvatarSize(R.dimen.blogs_avatar_normal_size);
-				setTextSize(authorName, R.dimen.text_size_small);
-				break;
-			case COMMENTER:
-				avatarIcon.setVisibility(INVISIBLE);
-				date.setVisibility(VISIBLE);
-				setAvatarSize(R.dimen.blogs_avatar_comment_size);
-				setTextSize(authorName, R.dimen.text_size_tiny);
-				break;
-			case LIST:
-				avatarIcon.setVisibility(INVISIBLE);
-				date.setVisibility(GONE);
-				setAvatarSize(R.dimen.listitem_picture_size_small);
-				setTextSize(authorName, R.dimen.text_size_medium);
-				break;
-			case RSS_FEED:
-				avatarIcon.setVisibility(INVISIBLE);
-				date.setVisibility(VISIBLE);
-				setRssVectorAvatar();
-				setAvatarSize(R.dimen.blogs_avatar_normal_size);
-				setTextSize(authorName, R.dimen.text_size_small);
-				break;
-			case RSS_FEED_REBLOGGED:
-				avatarIcon.setVisibility(INVISIBLE);
-				date.setVisibility(VISIBLE);
-				setRssVectorAvatar();
-				setAvatarSize(R.dimen.blogs_avatar_comment_size);
-				setTextSize(authorName, R.dimen.text_size_tiny);
-				break;
-		}
-	}
+        public void setAuthorNotClickable() {
+                setOnClickListener(null);
+                setClickable(false);
+                setFocusable(false);
+                setBackgroundResource(0);
+        }
 
-	private void setAvatarSize(@DimenRes int res) {
-		LayoutParams params = (LayoutParams) avatar.getLayoutParams();
-		int size = getResources().getDimensionPixelSize(res);
-		params.height = size;
-		params.width = size;
-		avatar.setLayoutParams(params);
-	}
+        /**
+         * Styles this view for a different persona.
+         * <p>
+         * Attention: RSS_FEED and RSS_FEED_REBLOGGED change the avatar
+         * and override the one set by
+         * {@link AuthorView#setAuthor(Author, AuthorInfo)}.
+         */
+        public void setPersona(int persona) {
+                switch (persona) {
+                        case NORMAL:
+                                avatarIcon.setVisibility(INVISIBLE);
+                                date.setVisibility(VISIBLE);
+                                setAvatarSize(R.dimen.blogs_avatar_normal_size);
+                                setTextSize(authorName, R.dimen.text_size_small);
+                                break;
+                        case REBLOGGER:
+                                avatarIcon.setVisibility(VISIBLE);
+                                date.setVisibility(VISIBLE);
+                                setAvatarSize(R.dimen.blogs_avatar_normal_size);
+                                setTextSize(authorName, R.dimen.text_size_small);
+                                break;
+                        case COMMENTER:
+                                avatarIcon.setVisibility(INVISIBLE);
+                                date.setVisibility(VISIBLE);
+                                setAvatarSize(R.dimen.blogs_avatar_comment_size);
+                                setTextSize(authorName, R.dimen.text_size_tiny);
+                                break;
+                        case LIST:
+                                avatarIcon.setVisibility(INVISIBLE);
+                                date.setVisibility(GONE);
+                                setAvatarSize(R.dimen.listitem_picture_size_small);
+                                setTextSize(authorName, R.dimen.text_size_medium);
+                                break;
+                        case RSS_FEED:
+                                avatarIcon.setVisibility(INVISIBLE);
+                                date.setVisibility(VISIBLE);
+                                setRssVectorAvatar();
+                                setAvatarSize(R.dimen.blogs_avatar_normal_size);
+                                setTextSize(authorName, R.dimen.text_size_small);
+                                break;
+                        case RSS_FEED_REBLOGGED:
+                                avatarIcon.setVisibility(INVISIBLE);
+                                date.setVisibility(VISIBLE);
+                                setRssVectorAvatar();
+                                setAvatarSize(R.dimen.blogs_avatar_comment_size);
+                                setTextSize(authorName, R.dimen.text_size_tiny);
+                                break;
+                }
+        }
 
-	private void setTextSize(TextView v, @DimenRes int res) {
-		float textSize = getResources().getDimensionPixelSize(res);
-		v.setTextSize(COMPLEX_UNIT_PX, textSize);
-	}
+        private void setAvatarSize(@DimenRes int res) {
+                LayoutParams params = (LayoutParams) avatar.getLayoutParams();
+                int size = getResources().getDimensionPixelSize(res);
+                params.height = size;
+                params.width = size;
+                avatar.setLayoutParams(params);
+        }
 
-	/**
-	 * Applies special hack to use AppCompat vector drawable support
-	 * when setting the RSS vector drawable to the avatar view.
-	 * {@link ImageView#setImageResource(int)} is not working as
-	 * {@link CircleImageView} is not using
-	 * {@link androidx.appcompat.widget.AppCompatImageView}.
-	 */
-	private void setRssVectorAvatar() {
-		Drawable d = getDrawable(getContext(), R.drawable.ic_rss_feed);
-		avatar.setImageDrawable(d);
-	}
+        private void setTextSize(TextView v, @DimenRes int res) {
+                float textSize = getResources().getDimensionPixelSize(res);
+                v.setTextSize(COMPLEX_UNIT_PX, textSize);
+        }
+
+        /**
+         * Applies special hack to use AppCompat vector drawable support
+         * when setting the RSS vector drawable to the avatar view.
+         * {@link ImageView#setImageResource(int)} is not working as
+         * {@link CircleImageView} is not using
+         * {@link androidx.appcompat.widget.AppCompatImageView}.
+         */
+        private void setRssVectorAvatar() {
+                Drawable d = getDrawable(getContext(), R.drawable.ic_rss_feed);
+                avatar.setImageDrawable(d);
+        }
 
 }

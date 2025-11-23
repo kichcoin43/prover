@@ -5,6 +5,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 import org.briarproject.briar.R;
 import org.briarproject.briar.android.view.TrustIndicatorView;
 import org.briarproject.briar.api.identity.AuthorInfo;
@@ -21,72 +23,109 @@ import static org.briarproject.briar.android.view.AuthorView.setAvatar;
 @UiThread
 @NotNullByDefault
 public class ContactItemViewHolder<I extends ContactItem>
-		extends RecyclerView.ViewHolder {
+                extends RecyclerView.ViewHolder {
 
-	protected final ViewGroup layout;
-	protected final ImageView avatar;
-	protected final TextView name;
-	@Nullable
-	protected final ImageView bulb;
-	@Nullable
-	protected final TrustIndicatorView trustIndicator;
-	@Nullable
-	protected final TextView trustIndicatorDescription;
+        protected final ViewGroup layout;
+        protected final ImageView avatar;
+        protected final TextView name;
+        @Nullable
+        protected final LottieAnimationView contactEmoji;
+        @Nullable
+        protected final ImageView bulb;
+        @Nullable
+        protected final TrustIndicatorView trustIndicator;
+        @Nullable
+        protected final TextView trustIndicatorDescription;
+        @Nullable
+        private org.briarproject.briar.android.emoji.AnimatedEmojiManager emojiManager;
 
-	public ContactItemViewHolder(View v) {
-		super(v);
+        public ContactItemViewHolder(View v) {
+                super(v);
 
-		layout = (ViewGroup) v;
-		avatar = v.findViewById(R.id.avatarView);
-		name = v.findViewById(R.id.nameView);
-		// this can be null as not all layouts that use this ViewHolder have it
-		bulb = v.findViewById(R.id.bulbView);
-		// this can be null as not all layouts that use this ViewHolder have it
-		trustIndicator = v.findViewById(R.id.trustIndicator);
-		// this can be null as not all layouts that use this ViewHolder have it
-		trustIndicatorDescription =
-				v.findViewById(R.id.trustIndicatorDescription);
-	}
+                layout = (ViewGroup) v;
+                avatar = v.findViewById(R.id.avatarView);
+                name = v.findViewById(R.id.nameView);
+                contactEmoji = v.findViewById(R.id.contactEmoji);
+                // this can be null as not all layouts that use this ViewHolder have it
+                bulb = v.findViewById(R.id.bulbView);
+                // this can be null as not all layouts that use this ViewHolder have it
+                trustIndicator = v.findViewById(R.id.trustIndicator);
+                // this can be null as not all layouts that use this ViewHolder have it
+                trustIndicatorDescription =
+                                v.findViewById(R.id.trustIndicatorDescription);
+                
+                // Cache the emoji manager to avoid repeated lookups
+                try {
+                        emojiManager = org.briarproject.briar.android.AppModule.getAndroidComponent(
+                                        layout.getContext()).animatedEmojiManager();
+                } catch (Exception e) {
+                        emojiManager = null;
+                }
+        }
 
-	protected void bind(I item, @Nullable OnContactClickListener<I> listener) {
-		setAvatar(avatar, item);
-		name.setText(getContactDisplayName(item.getContact()));
+        protected void bind(I item, @Nullable OnContactClickListener<I> listener) {
+                setAvatar(avatar, item);
+                name.setText(getContactDisplayName(item.getContact()));
 
-		if (bulb != null) {
-			// online/offline
-			if (item.isConnected()) {
-				bulb.setImageResource(R.drawable.contact_connected);
-			} else {
-				bulb.setImageResource(R.drawable.contact_disconnected);
-			}
-		}
+                // Show animated emoji if available
+                if (contactEmoji != null && emojiManager != null) {
+                        // Clear any previous animation first
+                        contactEmoji.cancelAnimation();
+                        contactEmoji.clearAnimation();
+                        
+                        String contactId = item.getContact().getId().toString();
+                        org.briarproject.briar.android.emoji.AnimatedEmoji emoji =
+                                        emojiManager.getUserEmoji(contactId);
+                        if (emoji != null) {
+                                try {
+                                        contactEmoji.setAnimation(emoji.getAssetPath());
+                                        contactEmoji.setVisibility(View.VISIBLE);
+                                        contactEmoji.playAnimation();
+                                } catch (Exception e) {
+                                        contactEmoji.setVisibility(View.GONE);
+                                }
+                        } else {
+                                contactEmoji.setVisibility(View.GONE);
+                        }
+                } else if (contactEmoji != null) {
+                        contactEmoji.setVisibility(View.GONE);
+                }
 
-		if (trustIndicator != null && trustIndicatorDescription != null) {
-			final AuthorInfo.Status status = item.getAuthorInfo().getStatus();
-			trustIndicator.setTrustLevel(status);
+                if (bulb != null) {
+                        // online/offline
+                        if (item.isConnected()) {
+                                bulb.setImageResource(R.drawable.contact_connected);
+                        } else {
+                                bulb.setImageResource(R.drawable.contact_disconnected);
+                        }
+                }
 
-			switch (status) {
-				case UNVERIFIED:
-					trustIndicatorDescription.setText(
-							R.string.peer_trust_level_unverified);
-					break;
-				case VERIFIED:
-					trustIndicatorDescription.setText(
-							R.string.peer_trust_level_verified);
-					break;
-				case OURSELVES:
-					trustIndicatorDescription.setText(
-							R.string.peer_trust_level_ourselves);
-					break;
-				default:
-					trustIndicatorDescription.setText(
-							R.string.peer_trust_level_stranger);
-			}
-		}
+                if (trustIndicator != null && trustIndicatorDescription != null) {
+                        final AuthorInfo.Status status = item.getAuthorInfo().getStatus();
+                        trustIndicator.setTrustLevel(status);
 
-		layout.setOnClickListener(v -> {
-			if (listener != null) listener.onItemClick(avatar, item);
-		});
-	}
+                        switch (status) {
+                                case UNVERIFIED:
+                                        trustIndicatorDescription.setText(
+                                                        R.string.peer_trust_level_unverified);
+                                        break;
+                                case VERIFIED:
+                                        trustIndicatorDescription.setText(
+                                                        R.string.peer_trust_level_verified);
+                                        break;
+                                case OURSELVES:
+                                        trustIndicatorDescription.setText(
+                                                        R.string.peer_trust_level_ourselves);
+                                        break;
+                                default:
+                                        trustIndicatorDescription.setText(
+                                                        R.string.peer_trust_level_stranger);
+                        }
+                }
+
+                layout.setOnClickListener(v -> {
+                        if (listener != null) listener.onItemClick(avatar, item);
+                });
+        }
 
 }

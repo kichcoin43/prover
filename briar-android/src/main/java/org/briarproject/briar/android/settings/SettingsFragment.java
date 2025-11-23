@@ -37,111 +37,178 @@ import static org.briarproject.briar.android.util.UiUtils.tryToStartActivity;
 @ParametersNotNullByDefault
 public class SettingsFragment extends PreferenceFragmentCompat {
 
-	public static final String SETTINGS_NAMESPACE = "android-ui";
+        public static final String SETTINGS_NAMESPACE = "android-ui";
 
-	private static final String PREF_KEY_AVATAR = "pref_key_avatar";
-	private static final String PREF_KEY_SHARE_LINK = "pref_key_share_app_link";
-	private static final String PREF_KEY_FEEDBACK = "pref_key_send_feedback";
-	private static final String PREF_KEY_DEV = "pref_key_dev";
-	private static final String PREF_KEY_EXPLODE = "pref_key_explode";
-	private static final String PREF_KEY_MAILBOX = "pref_key_mailbox";
+        private static final String PREF_KEY_AVATAR = "pref_key_avatar";
+        private static final String PREF_KEY_PREMIUM_EMOJI = "pref_key_premium_emoji";
+        private static final String PREF_KEY_SHARE_LINK = "pref_key_share_app_link";
+        private static final String PREF_KEY_FEEDBACK = "pref_key_send_feedback";
+        private static final String PREF_KEY_DEV = "pref_key_dev";
+        private static final String PREF_KEY_EXPLODE = "pref_key_explode";
+        private static final String PREF_KEY_MAILBOX = "pref_key_mailbox";
 
-	private static final String DOWNLOAD_URL = "https://t.me/+-WtecXg4jLRiM2Ji";
+        private static final String DOWNLOAD_URL = "https://t.me/+-WtecXg4jLRiM2Ji";
 
-	@Inject
-	ViewModelProvider.Factory viewModelFactory;
+        @Inject
+        ViewModelProvider.Factory viewModelFactory;
+        @Inject
+        org.briarproject.briar.android.emoji.AnimatedEmojiManager emojiManager;
 
-	private SettingsViewModel viewModel;
-	private AvatarPreference prefAvatar;
+        private SettingsViewModel viewModel;
+        private AvatarPreference prefAvatar;
 
-	private final ActivityResultLauncher<String[]> docLauncher =
-			registerForActivityResult(new OpenImageDocumentAdvanced(),
-					this::onImageSelected);
-	private final ActivityResultLauncher<String> contentLauncher =
-			registerForActivityResult(new GetImageAdvanced(),
-					this::onImageSelected);
+        private final ActivityResultLauncher<String[]> docLauncher =
+                        registerForActivityResult(new OpenImageDocumentAdvanced(),
+                                        this::onImageSelected);
+        private final ActivityResultLauncher<String> contentLauncher =
+                        registerForActivityResult(new GetImageAdvanced(),
+                                        this::onImageSelected);
 
-	@Override
-	public void onAttach(@NonNull Context context) {
-		super.onAttach(context);
-		getAndroidComponent(context).inject(this);
-		viewModel = new ViewModelProvider(requireActivity(), viewModelFactory)
-				.get(SettingsViewModel.class);
-	}
+        @Override
+        public void onAttach(@NonNull Context context) {
+                super.onAttach(context);
+                getAndroidComponent(context).inject(this);
+                viewModel = new ViewModelProvider(requireActivity(), viewModelFactory)
+                                .get(SettingsViewModel.class);
+        }
 
-	@Override
-	public void onCreatePreferences(Bundle bundle, String s) {
-		addPreferencesFromResource(R.xml.settings);
+        @Override
+        public void onCreatePreferences(Bundle bundle, String s) {
+                addPreferencesFromResource(R.xml.settings);
 
-		prefAvatar = requireNonNull(findPreference(PREF_KEY_AVATAR));
-		if (viewModel.shouldEnableProfilePictures()) {
-			prefAvatar.setOnPreferenceClickListener(preference -> {
-				launchActivityToOpenFile(requireContext(),
-						docLauncher, contentLauncher, "image/*");
-				return true;
-			});
-		} else {
-			prefAvatar.setVisible(false);
-		}
+                prefAvatar = requireNonNull(findPreference(PREF_KEY_AVATAR));
+                if (viewModel.shouldEnableProfilePictures()) {
+                        prefAvatar.setOnPreferenceClickListener(preference -> {
+                                launchActivityToOpenFile(requireContext(),
+                                                docLauncher, contentLauncher, "image/*");
+                                return true;
+                        });
+                } else {
+                        prefAvatar.setVisible(false);
+                }
 
-		Preference prefMailbox =
-				requireNonNull(findPreference(PREF_KEY_MAILBOX));
-		prefMailbox.setOnPreferenceClickListener(preference -> {
-			Intent i = new Intent(requireContext(), MailboxActivity.class);
-			startActivity(i);
-			return true;
-		});
+                Preference prefPremiumEmoji =
+                                requireNonNull(findPreference(PREF_KEY_PREMIUM_EMOJI));
+                updateEmojiPreferenceSummary(prefPremiumEmoji);
+                prefPremiumEmoji.setOnPreferenceClickListener(preference -> {
+                        showEmojiPicker();
+                        return true;
+                });
 
-		Preference prefShareLink =
-				requireNonNull(findPreference(PREF_KEY_SHARE_LINK));
-		prefShareLink.setOnPreferenceClickListener(preference -> {
-			String text = getString(R.string.share_app_link_text, DOWNLOAD_URL);
-			Intent sendIntent = new Intent(ACTION_SEND);
-			sendIntent.putExtra(EXTRA_TEXT, text);
-			sendIntent.setType("text/plain");
-			tryToStartActivity(requireActivity(),
-					Intent.createChooser(sendIntent, null));
-			return true;
-		});
-		Preference prefFeedback =
-				requireNonNull(findPreference(PREF_KEY_FEEDBACK));
-		prefFeedback.setOnPreferenceClickListener(preference -> {
-			triggerFeedback(requireContext());
-			return true;
-		});
+                Preference prefMailbox =
+                                requireNonNull(findPreference(PREF_KEY_MAILBOX));
+                prefMailbox.setOnPreferenceClickListener(preference -> {
+                        Intent i = new Intent(requireContext(), MailboxActivity.class);
+                        startActivity(i);
+                        return true;
+                });
 
-		Preference explode = requireNonNull(findPreference(PREF_KEY_EXPLODE));
-		if (IS_DEBUG_BUILD) {
-			explode.setOnPreferenceClickListener(preference -> {
-				throw new RuntimeException("Boom!");
-			});
-		} else {
-			PreferenceGroup dev = requireNonNull(findPreference(PREF_KEY_DEV));
-			dev.setVisible(false);
-		}
-	}
+                Preference prefShareLink =
+                                requireNonNull(findPreference(PREF_KEY_SHARE_LINK));
+                prefShareLink.setOnPreferenceClickListener(preference -> {
+                        String text = getString(R.string.share_app_link_text, DOWNLOAD_URL);
+                        Intent sendIntent = new Intent(ACTION_SEND);
+                        sendIntent.putExtra(EXTRA_TEXT, text);
+                        sendIntent.setType("text/plain");
+                        tryToStartActivity(requireActivity(),
+                                        Intent.createChooser(sendIntent, null));
+                        return true;
+                });
+                Preference prefFeedback =
+                                requireNonNull(findPreference(PREF_KEY_FEEDBACK));
+                prefFeedback.setOnPreferenceClickListener(preference -> {
+                        triggerFeedback(requireContext());
+                        return true;
+                });
 
-	@Override
-	public void onViewCreated(@NonNull View view,
-			@Nullable Bundle savedInstanceState) {
-		super.onViewCreated(view, savedInstanceState);
+                Preference explode = requireNonNull(findPreference(PREF_KEY_EXPLODE));
+                if (IS_DEBUG_BUILD) {
+                        explode.setOnPreferenceClickListener(preference -> {
+                                throw new RuntimeException("Boom!");
+                        });
+                } else {
+                        PreferenceGroup dev = requireNonNull(findPreference(PREF_KEY_DEV));
+                        dev.setVisible(false);
+                }
+        }
 
-		viewModel.getOwnIdentityInfo().observe(getViewLifecycleOwner(), us ->
-				prefAvatar.setOwnIdentityInfo(us)
-		);
-	}
+        @Override
+        public void onViewCreated(@NonNull View view,
+                        @Nullable Bundle savedInstanceState) {
+                super.onViewCreated(view, savedInstanceState);
 
-	@Override
-	public void onStart() {
-		super.onStart();
-		requireActivity().setTitle(R.string.settings_button);
-	}
+                viewModel.getOwnIdentityInfo().observe(getViewLifecycleOwner(), us ->
+                                prefAvatar.setOwnIdentityInfo(us)
+                );
+        }
 
-	private void onImageSelected(@Nullable Uri uri) {
-		if (uri == null) return;
-		DialogFragment dialog = ConfirmAvatarDialogFragment.newInstance(uri);
-		dialog.show(getParentFragmentManager(),
-				ConfirmAvatarDialogFragment.TAG);
-	}
+        @Override
+        public void onStart() {
+                super.onStart();
+                requireActivity().setTitle(R.string.settings_button);
+                
+                // Refresh emoji preference summary in case it was changed
+                Preference prefPremiumEmoji = findPreference(PREF_KEY_PREMIUM_EMOJI);
+                if (prefPremiumEmoji != null) {
+                        updateEmojiPreferenceSummary(prefPremiumEmoji);
+                }
+        }
+
+        private void onImageSelected(@Nullable Uri uri) {
+                if (uri == null) return;
+                DialogFragment dialog = ConfirmAvatarDialogFragment.newInstance(uri);
+                dialog.show(getParentFragmentManager(),
+                                ConfirmAvatarDialogFragment.TAG);
+        }
+
+        private void showEmojiPicker() {
+                // Check if user already has an emoji and offer to remove it
+                if (emojiManager.getOwnEmoji() != null) {
+                        new androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                                        .setTitle(R.string.premium_emoji_title)
+                                        .setMessage(R.string.premium_emoji_summary)
+                                        .setPositiveButton(R.string.select_animated_emoji, (dialog, which) -> {
+                                                showEmojiPickerDialog();
+                                        })
+                                        .setNegativeButton(R.string.remove_emoji, (dialog, which) -> {
+                                                emojiManager.setOwnEmoji(null);
+                                                Preference pref = findPreference(PREF_KEY_PREMIUM_EMOJI);
+                                                if (pref != null) {
+                                                        updateEmojiPreferenceSummary(pref);
+                                                }
+                                        })
+                                        .setNeutralButton(android.R.string.cancel, null)
+                                        .show();
+                } else {
+                        showEmojiPickerDialog();
+                }
+        }
+
+        private void showEmojiPickerDialog() {
+                org.briarproject.briar.android.emoji.AnimatedEmojiPickerDialog dialog =
+                                org.briarproject.briar.android.emoji.AnimatedEmojiPickerDialog.newInstance(
+                                                emojiManager,
+                                                emoji -> {
+                                                        if (emoji != null) {
+                                                                emojiManager.setOwnEmoji(emoji.getId());
+                                                                Preference pref = findPreference(PREF_KEY_PREMIUM_EMOJI);
+                                                                if (pref != null) {
+                                                                        updateEmojiPreferenceSummary(pref);
+                                                                }
+                                                        }
+                                                });
+                dialog.show(getParentFragmentManager(), "emoji_picker");
+        }
+
+        private void updateEmojiPreferenceSummary(Preference pref) {
+                org.briarproject.briar.android.emoji.AnimatedEmoji emoji = emojiManager.getOwnEmoji();
+                if (emoji != null) {
+                        // Show emoji name in summary
+                        String emojiName = emoji.getName();
+                        pref.setSummary(emojiName);
+                } else {
+                        pref.setSummary(R.string.no_emoji);
+                }
+        }
 
 }
