@@ -57,27 +57,10 @@ public class AnimatedEmojiManager implements OpenDatabaseHook {
         }
 
         private void loadAvailableEmojis() {
-                try {
-                        String[] categories = context.getAssets().list("emojis");
-                        if (categories != null) {
-                                for (String category : categories) {
-                                        String[] files = context.getAssets().list("emojis/" + category);
-                                        if (files != null) {
-                                                for (String file : files) {
-                                                        if (file.endsWith(".tgs")) {
-                                                                String id = category + "_" + file.replace(".tgs", "");
-                                                                String name = file.replace(".tgs", "").replace("_", " ");
-                                                                String path = "emojis/" + category + "/" + file;
-                                                                AnimatedEmoji emoji = new AnimatedEmoji(id, name, path, category);
-                                                                availableEmojis.put(id, emoji);
-                                                        }
-                                                }
-                                        }
-                                }
-                        }
-                } catch (IOException e) {
-                        logException(LOG, WARNING, e);
-                }
+                // Load only the 3 premium watch emojis
+                availableEmojis.put("watch1", new AnimatedEmoji("watch1", "Watch 1", "emojis/watch1.tgs", "premium"));
+                availableEmojis.put("watch2", new AnimatedEmoji("watch2", "Watch 2", "emojis/watch2.tgs", "premium"));
+                availableEmojis.put("watch3", new AnimatedEmoji("watch3", "Watch 3", "emojis/watch3.tgs", "premium"));
         }
 
         public List<AnimatedEmoji> getEmojisByCategory(String category) {
