@@ -88,284 +88,285 @@ import static org.briarproject.bramble.api.reporting.ReportingConstants.DEV_PUBL
 import static org.briarproject.briar.android.TestingConstants.IS_DEBUG_BUILD;
 
 @Module(includes = {
-		SetupModule.class,
-		DozeHelperModule.class,
-		AddNearbyContactModule.class,
-		LoggingModule.class,
-		LoginModule.class,
-		NavDrawerModule.class,
-		ViewModelModule.class,
-		SettingsModule.class,
-		DevReportModule.class,
-		ContactListModule.class,
-		IntroductionModule.class,
-		ConnectViaBluetoothModule.class,
-		// below need to be within same scope as ViewModelProvider.Factory
-		BlogModule.class,
-		ForumModule.class,
-		GroupListModule.class,
-		GroupConversationModule.class,
-		SharingModule.class,
-		HotspotModule.class,
-		TransferDataModule.class,
-		MailboxModule.class,
+                SetupModule.class,
+                DozeHelperModule.class,
+                AddNearbyContactModule.class,
+                LoggingModule.class,
+                LoginModule.class,
+                NavDrawerModule.class,
+                ViewModelModule.class,
+                SettingsModule.class,
+                DevReportModule.class,
+                ContactListModule.class,
+                IntroductionModule.class,
+                ConnectViaBluetoothModule.class,
+                org.briarproject.briar.android.emoji.EmojiModule.class,
+                // below need to be within same scope as ViewModelProvider.Factory
+                BlogModule.class,
+                ForumModule.class,
+                GroupListModule.class,
+                GroupConversationModule.class,
+                SharingModule.class,
+                HotspotModule.class,
+                TransferDataModule.class,
+                MailboxModule.class,
 })
 public class AppModule {
 
-	static class EagerSingletons {
-		@Inject
-		AndroidNotificationManager androidNotificationManager;
-		@Inject
-		ScreenFilterMonitor screenFilterMonitor;
-		@Inject
-		NetworkUsageMetrics networkUsageMetrics;
-		@Inject
-		DozeWatchdog dozeWatchdog;
-		@Inject
-		LockManager lockManager;
-		@Inject
-		RecentEmoji recentEmoji;
-	}
+        static class EagerSingletons {
+                @Inject
+                AndroidNotificationManager androidNotificationManager;
+                @Inject
+                ScreenFilterMonitor screenFilterMonitor;
+                @Inject
+                NetworkUsageMetrics networkUsageMetrics;
+                @Inject
+                DozeWatchdog dozeWatchdog;
+                @Inject
+                LockManager lockManager;
+                @Inject
+                RecentEmoji recentEmoji;
+        }
 
-	private final Application application;
+        private final Application application;
 
-	public AppModule(Application application) {
-		this.application = application;
-	}
+        public AppModule(Application application) {
+                this.application = application;
+        }
 
-	public static AndroidComponent getAndroidComponent(Context ctx) {
-		BriarApplication app = (BriarApplication) ctx.getApplicationContext();
-		return app.getApplicationComponent();
-	}
+        public static AndroidComponent getAndroidComponent(Context ctx) {
+                BriarApplication app = (BriarApplication) ctx.getApplicationContext();
+                return app.getApplicationComponent();
+        }
 
-	@Provides
-	@Singleton
-	Application providesApplication() {
-		return application;
-	}
+        @Provides
+        @Singleton
+        Application providesApplication() {
+                return application;
+        }
 
-	@Provides
-	@Singleton
-	DatabaseConfig provideDatabaseConfig(Application app) {
-		//FIXME: StrictMode
-		StrictMode.ThreadPolicy tp = StrictMode.allowThreadDiskReads();
-		StrictMode.allowThreadDiskWrites();
-		File dbDir = app.getApplicationContext().getDir("db", MODE_PRIVATE);
-		File keyDir = app.getApplicationContext().getDir("key", MODE_PRIVATE);
-		StrictMode.setThreadPolicy(tp);
-		KeyStrengthener keyStrengthener = SDK_INT >= 23
-				? new AndroidKeyStrengthener() : null;
-		return new AndroidDatabaseConfig(dbDir, keyDir, keyStrengthener);
-	}
+        @Provides
+        @Singleton
+        DatabaseConfig provideDatabaseConfig(Application app) {
+                //FIXME: StrictMode
+                StrictMode.ThreadPolicy tp = StrictMode.allowThreadDiskReads();
+                StrictMode.allowThreadDiskWrites();
+                File dbDir = app.getApplicationContext().getDir("db", MODE_PRIVATE);
+                File keyDir = app.getApplicationContext().getDir("key", MODE_PRIVATE);
+                StrictMode.setThreadPolicy(tp);
+                KeyStrengthener keyStrengthener = SDK_INT >= 23
+                                ? new AndroidKeyStrengthener() : null;
+                return new AndroidDatabaseConfig(dbDir, keyDir, keyStrengthener);
+        }
 
-	@Provides
-	@Singleton
-	@MailboxDirectory
-	File provideMailboxDirectory(Application app) {
-		return app.getDir("mailbox", MODE_PRIVATE);
-	}
+        @Provides
+        @Singleton
+        @MailboxDirectory
+        File provideMailboxDirectory(Application app) {
+                return app.getDir("mailbox", MODE_PRIVATE);
+        }
 
-	@Provides
-	@Singleton
-	@TorDirectory
-	File provideTorDirectory(Application app) {
-		return app.getDir("tor", MODE_PRIVATE);
-	}
+        @Provides
+        @Singleton
+        @TorDirectory
+        File provideTorDirectory(Application app) {
+                return app.getDir("tor", MODE_PRIVATE);
+        }
 
-	@Provides
-	@Singleton
-	@TorSocksPort
-	int provideTorSocksPort() {
-		if (!IS_DEBUG_BUILD) {
-			return DEFAULT_SOCKS_PORT;
-		} else {
-			return DEFAULT_SOCKS_PORT + 2;
-		}
-	}
+        @Provides
+        @Singleton
+        @TorSocksPort
+        int provideTorSocksPort() {
+                if (!IS_DEBUG_BUILD) {
+                        return DEFAULT_SOCKS_PORT;
+                } else {
+                        return DEFAULT_SOCKS_PORT + 2;
+                }
+        }
 
-	@Provides
-	@Singleton
-	@TorControlPort
-	int provideTorControlPort() {
-		if (!IS_DEBUG_BUILD) {
-			return DEFAULT_CONTROL_PORT;
-		} else {
-			return DEFAULT_CONTROL_PORT + 2;
-		}
-	}
+        @Provides
+        @Singleton
+        @TorControlPort
+        int provideTorControlPort() {
+                if (!IS_DEBUG_BUILD) {
+                        return DEFAULT_CONTROL_PORT;
+                } else {
+                        return DEFAULT_CONTROL_PORT + 2;
+                }
+        }
 
-	@Provides
-	@Singleton
-	PluginConfig providePluginConfig(AndroidBluetoothPluginFactory bluetooth,
-			AndroidTorPluginFactory tor, AndroidLanTcpPluginFactory lan,
-			AndroidRemovableDrivePluginFactory drive,
-			MailboxPluginFactory mailbox, FeatureFlags featureFlags) {
-		@NotNullByDefault
-		PluginConfig pluginConfig = new PluginConfig() {
+        @Provides
+        @Singleton
+        PluginConfig providePluginConfig(AndroidBluetoothPluginFactory bluetooth,
+                        AndroidTorPluginFactory tor, AndroidLanTcpPluginFactory lan,
+                        AndroidRemovableDrivePluginFactory drive,
+                        MailboxPluginFactory mailbox, FeatureFlags featureFlags) {
+                @NotNullByDefault
+                PluginConfig pluginConfig = new PluginConfig() {
 
-			@Override
-			public Collection<DuplexPluginFactory> getDuplexFactories() {
-				return asList(bluetooth, tor, lan);
-			}
+                        @Override
+                        public Collection<DuplexPluginFactory> getDuplexFactories() {
+                                return asList(bluetooth, tor, lan);
+                        }
 
-			@Override
-			public Collection<SimplexPluginFactory> getSimplexFactories() {
-				List<SimplexPluginFactory> simplex = new ArrayList<>();
-				simplex.add(mailbox);
-				simplex.add(drive);
-				return simplex;
-			}
+                        @Override
+                        public Collection<SimplexPluginFactory> getSimplexFactories() {
+                                List<SimplexPluginFactory> simplex = new ArrayList<>();
+                                simplex.add(mailbox);
+                                simplex.add(drive);
+                                return simplex;
+                        }
 
-			@Override
-			public boolean shouldPoll() {
-				return true;
-			}
+                        @Override
+                        public boolean shouldPoll() {
+                                return true;
+                        }
 
-			@Override
-			public Map<TransportId, List<TransportId>> getTransportPreferences() {
-				// Prefer LAN to Bluetooth
-				return singletonMap(BluetoothConstants.ID,
-						singletonList(LanTcpConstants.ID));
-			}
-		};
-		return pluginConfig;
-	}
+                        @Override
+                        public Map<TransportId, List<TransportId>> getTransportPreferences() {
+                                // Prefer LAN to Bluetooth
+                                return singletonMap(BluetoothConstants.ID,
+                                                singletonList(LanTcpConstants.ID));
+                        }
+                };
+                return pluginConfig;
+        }
 
-	@Provides
-	@Singleton
-	DevConfig provideDevConfig(Application app, CryptoComponent crypto) {
-		@NotNullByDefault
-		DevConfig devConfig = new DevConfig() {
+        @Provides
+        @Singleton
+        DevConfig provideDevConfig(Application app, CryptoComponent crypto) {
+                @NotNullByDefault
+                DevConfig devConfig = new DevConfig() {
 
-			@Override
-			public PublicKey getDevPublicKey() {
-				try {
-					return crypto.getMessageKeyParser().parsePublicKey(
-							StringUtils.fromHexString(DEV_PUBLIC_KEY_HEX));
-				} catch (GeneralSecurityException | FormatException e) {
-					throw new RuntimeException(e);
-				}
-			}
+                        @Override
+                        public PublicKey getDevPublicKey() {
+                                try {
+                                        return crypto.getMessageKeyParser().parsePublicKey(
+                                                        StringUtils.fromHexString(DEV_PUBLIC_KEY_HEX));
+                                } catch (GeneralSecurityException | FormatException e) {
+                                        throw new RuntimeException(e);
+                                }
+                        }
 
-			@Override
-			public String getDevOnionAddress() {
-				return DEV_ONION_ADDRESS;
-			}
+                        @Override
+                        public String getDevOnionAddress() {
+                                return DEV_ONION_ADDRESS;
+                        }
 
-			@Override
-			public File getReportDir() {
-				return AndroidUtils.getReportDir(app.getApplicationContext());
-			}
+                        @Override
+                        public File getReportDir() {
+                                return AndroidUtils.getReportDir(app.getApplicationContext());
+                        }
 
-			@Override
-			public File getLogcatFile() {
-				return AndroidUtils.getLogcatFile(app.getApplicationContext());
-			}
-		};
-		return devConfig;
-	}
+                        @Override
+                        public File getLogcatFile() {
+                                return AndroidUtils.getLogcatFile(app.getApplicationContext());
+                        }
+                };
+                return devConfig;
+        }
 
-	@Provides
-	TestAvatarCreator provideTestAvatarCreator(
-			TestAvatarCreatorImpl testAvatarCreator) {
-		return testAvatarCreator;
-	}
+        @Provides
+        TestAvatarCreator provideTestAvatarCreator(
+                        TestAvatarCreatorImpl testAvatarCreator) {
+                return testAvatarCreator;
+        }
 
-	@Provides
-	SharedPreferences provideSharedPreferences(Application app) {
-		// FIXME unify this with getDefaultSharedPreferences()
-		return app.getSharedPreferences("db", MODE_PRIVATE);
-	}
+        @Provides
+        SharedPreferences provideSharedPreferences(Application app) {
+                // FIXME unify this with getDefaultSharedPreferences()
+                return app.getSharedPreferences("db", MODE_PRIVATE);
+        }
 
-	@Provides
-	@Singleton
-	AndroidNotificationManager provideAndroidNotificationManager(
-			LifecycleManager lifecycleManager, EventBus eventBus,
-			AndroidNotificationManagerImpl notificationManager) {
-		lifecycleManager.registerService(notificationManager);
-		eventBus.addListener(notificationManager);
-		return notificationManager;
-	}
+        @Provides
+        @Singleton
+        AndroidNotificationManager provideAndroidNotificationManager(
+                        LifecycleManager lifecycleManager, EventBus eventBus,
+                        AndroidNotificationManagerImpl notificationManager) {
+                lifecycleManager.registerService(notificationManager);
+                eventBus.addListener(notificationManager);
+                return notificationManager;
+        }
 
-	@Provides
-	@Singleton
-	ScreenFilterMonitor provideScreenFilterMonitor(
-			LifecycleManager lifecycleManager,
-			ScreenFilterMonitorImpl screenFilterMonitor) {
-		if (SDK_INT <= 29) {
-			// this keeps track of installed apps and does not work on API 30+
-			lifecycleManager.registerService(screenFilterMonitor);
-		}
-		return screenFilterMonitor;
-	}
+        @Provides
+        @Singleton
+        ScreenFilterMonitor provideScreenFilterMonitor(
+                        LifecycleManager lifecycleManager,
+                        ScreenFilterMonitorImpl screenFilterMonitor) {
+                if (SDK_INT <= 29) {
+                        // this keeps track of installed apps and does not work on API 30+
+                        lifecycleManager.registerService(screenFilterMonitor);
+                }
+                return screenFilterMonitor;
+        }
 
-	@Provides
-	@Singleton
-	NetworkUsageMetrics provideNetworkUsageMetrics(
-			LifecycleManager lifecycleManager) {
-		NetworkUsageMetrics networkUsageMetrics = new NetworkUsageMetricsImpl();
-		lifecycleManager.registerService(networkUsageMetrics);
-		return networkUsageMetrics;
-	}
+        @Provides
+        @Singleton
+        NetworkUsageMetrics provideNetworkUsageMetrics(
+                        LifecycleManager lifecycleManager) {
+                NetworkUsageMetrics networkUsageMetrics = new NetworkUsageMetricsImpl();
+                lifecycleManager.registerService(networkUsageMetrics);
+                return networkUsageMetrics;
+        }
 
-	@Provides
-	@Singleton
-	DozeWatchdog provideDozeWatchdog(LifecycleManager lifecycleManager) {
-		DozeWatchdogImpl dozeWatchdog = new DozeWatchdogImpl(application);
-		lifecycleManager.registerService(dozeWatchdog);
-		return dozeWatchdog;
-	}
+        @Provides
+        @Singleton
+        DozeWatchdog provideDozeWatchdog(LifecycleManager lifecycleManager) {
+                DozeWatchdogImpl dozeWatchdog = new DozeWatchdogImpl(application);
+                lifecycleManager.registerService(dozeWatchdog);
+                return dozeWatchdog;
+        }
 
-	@Provides
-	@Singleton
-	LockManager provideLockManager(LifecycleManager lifecycleManager,
-			EventBus eventBus, LockManagerImpl lockManager) {
-		lifecycleManager.registerService(lockManager);
-		eventBus.addListener(lockManager);
-		return lockManager;
-	}
+        @Provides
+        @Singleton
+        LockManager provideLockManager(LifecycleManager lifecycleManager,
+                        EventBus eventBus, LockManagerImpl lockManager) {
+                lifecycleManager.registerService(lockManager);
+                eventBus.addListener(lockManager);
+                return lockManager;
+        }
 
-	@Provides
-	@Singleton
-	RecentEmoji provideRecentEmoji(LifecycleManager lifecycleManager,
-			RecentEmojiImpl recentEmoji) {
-		lifecycleManager.registerOpenDatabaseHook(recentEmoji);
-		return recentEmoji;
-	}
+        @Provides
+        @Singleton
+        RecentEmoji provideRecentEmoji(LifecycleManager lifecycleManager,
+                        RecentEmojiImpl recentEmoji) {
+                lifecycleManager.registerOpenDatabaseHook(recentEmoji);
+                return recentEmoji;
+        }
 
-	@Provides
-	FeatureFlags provideFeatureFlags() {
-		return new FeatureFlags() {
+        @Provides
+        FeatureFlags provideFeatureFlags() {
+                return new FeatureFlags() {
 
-			@Override
-			public boolean shouldEnableImageAttachments() {
-				return true;
-			}
+                        @Override
+                        public boolean shouldEnableImageAttachments() {
+                                return true;
+                        }
 
-			@Override
-			public boolean shouldEnableProfilePictures() {
-				return true;
-			}
+                        @Override
+                        public boolean shouldEnableProfilePictures() {
+                                return true;
+                        }
 
-			@Override
-			public boolean shouldEnableDisappearingMessages() {
-				return true;
-			}
+                        @Override
+                        public boolean shouldEnableDisappearingMessages() {
+                                return true;
+                        }
 
-			@Override
-			public boolean shouldEnablePrivateGroupsInCore() {
-				return true;
-			}
+                        @Override
+                        public boolean shouldEnablePrivateGroupsInCore() {
+                                return true;
+                        }
 
-			@Override
-			public boolean shouldEnableForumsInCore() {
-				return true;
-			}
+                        @Override
+                        public boolean shouldEnableForumsInCore() {
+                                return true;
+                        }
 
-			@Override
-			public boolean shouldEnableBlogsInCore() {
-				return true;
-			}
-		};
-	}
+                        @Override
+                        public boolean shouldEnableBlogsInCore() {
+                                return true;
+                        }
+                };
+        }
 }

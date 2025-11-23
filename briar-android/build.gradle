@@ -1,223 +1,224 @@
 apply plugin: 'com.android.application'
 
 def getStdout = { command, defaultValue ->
-	def stdout = new ByteArrayOutputStream()
-	try {
-		exec {
-			commandLine = command
-			standardOutput = stdout
-		}
-		return stdout.toString().trim()
-	} catch (Exception ignored) {
-		return defaultValue
-	}
+        def stdout = new ByteArrayOutputStream()
+        try {
+                exec {
+                        commandLine = command
+                        standardOutput = stdout
+                }
+                return stdout.toString().trim()
+        } catch (Exception ignored) {
+                return defaultValue
+        }
 }
 
 android {
-	compileSdk 35
-	buildToolsVersion '35.0.0'
+        compileSdk 35
+        buildToolsVersion '35.0.0'
 
-	packagingOptions {
-		jniLibs {
-			keepDebugSymbols += ['**/*.so']
-		}
-		exclude 'net/jcip/annotations/GuardedBy.class'
-		exclude 'net/jcip/annotations/Immutable.class'
-		exclude 'net/jcip/annotations/NotThreadSafe.class'
-		exclude 'net/jcip/annotations/ThreadSafe.class'
-		exclude 'README.txt'
+        packagingOptions {
+                jniLibs {
+                        keepDebugSymbols += ['**/*.so']
+                }
+                exclude 'net/jcip/annotations/GuardedBy.class'
+                exclude 'net/jcip/annotations/Immutable.class'
+                exclude 'net/jcip/annotations/NotThreadSafe.class'
+                exclude 'net/jcip/annotations/ThreadSafe.class'
+                exclude 'README.txt'
 
-		pickFirst 'META-INF/MANIFEST.MF'
-		pickFirst 'META-INF/LICENSE'
-		pickFirst 'META-INF/LICENSE.txt'
-		pickFirst 'META-INF/NOTICE'
-		pickFirst 'META-INF/NOTICE.txt'
-		pickFirst 'META-INF/DEPENDENCIES'
-		merge 'META-INF/services/**'
-		exclude 'META-INF/*.version'
-		exclude 'META-INF/proguard/**'
-		exclude 'META-INF/versions/**'
-	}
+                pickFirst 'META-INF/MANIFEST.MF'
+                pickFirst 'META-INF/LICENSE'
+                pickFirst 'META-INF/LICENSE.txt'
+                pickFirst 'META-INF/NOTICE'
+                pickFirst 'META-INF/NOTICE.txt'
+                pickFirst 'META-INF/DEPENDENCIES'
+                merge 'META-INF/services/**'
+                exclude 'META-INF/*.version'
+                exclude 'META-INF/proguard/**'
+                exclude 'META-INF/versions/**'
+        }
 
-	defaultConfig {
-		minSdkVersion 21
-		targetSdkVersion 35
-		versionCode 10514
-		versionName "1.5.14"
-		applicationId "org.briarproject.briar.android"
-		buildConfigField "String", "TorVersion", "\"$tor_version\""
+        defaultConfig {
+                minSdkVersion 21
+                targetSdkVersion 35
+                versionCode 10514
+                versionName "1.5.14"
+                applicationId "org.briarproject.briar.android"
+                buildConfigField "String", "TorVersion", "\"$tor_version\""
 
-		vectorDrawables.useSupportLibrary = true
-		buildConfigField "String", "GitHash",
-			"\"${getStdout(['git', 'rev-parse', '--short=7', 'HEAD'], 'No commit hash')}\""
-		def now = (long) (System.currentTimeMillis() / 1000)
-		buildConfigField "Long", "BuildTimestamp",
-			"${getStdout(['git', 'log', '-n', '1', '--format=%ct'], now)}000L"
-		testInstrumentationRunner 'org.briarproject.briar.android.BriarTestRunner'
-		testInstrumentationRunnerArguments disableAnalytics: 'true'
+                vectorDrawables.useSupportLibrary = true
+                buildConfigField "String", "GitHash",
+                        "\"${getStdout(['git', 'rev-parse', '--short=7', 'HEAD'], 'No commit hash')}\""
+                def now = (long) (System.currentTimeMillis() / 1000)
+                buildConfigField "Long", "BuildTimestamp",
+                        "${getStdout(['git', 'log', '-n', '1', '--format=%ct'], now)}000L"
+                testInstrumentationRunner 'org.briarproject.briar.android.BriarTestRunner'
+                testInstrumentationRunnerArguments disableAnalytics: 'true'
 
-		multiDexEnabled true
-	}
+                multiDexEnabled true
+        }
 
-	buildTypes {
-		debug {
-			applicationIdSuffix ".debug"
-			shrinkResources false
-			minifyEnabled false
-			crunchPngs false
-			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-			testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt', 'proguard-test.txt'
-		}
-		release {
-			shrinkResources false
-			minifyEnabled true
-			crunchPngs false
-			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-		}
-	}
+        buildTypes {
+                debug {
+                        applicationIdSuffix ".debug"
+                        shrinkResources false
+                        minifyEnabled false
+                        crunchPngs false
+                        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+                        testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt', 'proguard-test.txt'
+                }
+                release {
+                        shrinkResources false
+                        minifyEnabled true
+                        crunchPngs false
+                        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+                }
+        }
 
-	flavorDimensions "version"
-	productFlavors {
-		screenshot {
-			dimension "version"
-			applicationIdSuffix ".screenshot"
-			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt', 'proguard-test.txt'
-		}
-		official {
-			dimension "version"
-		}
-	}
-	variantFilter { variant ->
-		if (variant.flavors*.name.contains("screenshot") && variant.buildType.name == "release") {
-			setIgnore(true)
-		}
-	}
+        flavorDimensions "version"
+        productFlavors {
+                screenshot {
+                        dimension "version"
+                        applicationIdSuffix ".screenshot"
+                        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt', 'proguard-test.txt'
+                }
+                official {
+                        dimension "version"
+                }
+        }
+        variantFilter { variant ->
+                if (variant.flavors*.name.contains("screenshot") && variant.buildType.name == "release") {
+                        setIgnore(true)
+                }
+        }
 
-	compileOptions {
-		sourceCompatibility JavaVersion.VERSION_17
-		targetCompatibility JavaVersion.VERSION_17
-	}
+        compileOptions {
+                sourceCompatibility JavaVersion.VERSION_17
+                targetCompatibility JavaVersion.VERSION_17
+        }
 
-	testOptions {
-		execution 'ANDROIDX_TEST_ORCHESTRATOR'
-		unitTests {
-			includeAndroidResources = true
-		}
-	}
-	namespace 'org.briarproject.briar'
-	lint {
-		warning 'MissingTranslation', 'MissingDefaultResource', 'ImpliedQuantity', 'ExtraTranslation', 'InvalidPackage'
-		disable 'GradleDependency'
-	}
+        testOptions {
+                execution 'ANDROIDX_TEST_ORCHESTRATOR'
+                unitTests {
+                        includeAndroidResources = true
+                }
+        }
+        namespace 'org.briarproject.briar'
+        lint {
+                warning 'MissingTranslation', 'MissingDefaultResource', 'ImpliedQuantity', 'ExtraTranslation', 'InvalidPackage'
+                disable 'GradleDependency'
+        }
 }
 
 dependencies {
-	implementation project(':bramble-api')
-	implementation project(':bramble-core')
-	implementation project(':bramble-android')
-	implementation project(':briar-core')
+        implementation project(':bramble-api')
+        implementation project(':bramble-core')
+        implementation project(':bramble-android')
+        implementation project(':briar-core')
 
-	implementation 'androidx.fragment:fragment:1.6.2'
-	implementation 'androidx.preference:preference:1.2.1'
-	implementation 'androidx.exifinterface:exifinterface:1.3.7'
-	implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
-	implementation 'androidx.lifecycle:lifecycle-livedata:2.6.2'
+        implementation 'androidx.fragment:fragment:1.6.2'
+        implementation 'androidx.preference:preference:1.2.1'
+        implementation 'androidx.exifinterface:exifinterface:1.3.7'
+        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
+        implementation 'androidx.lifecycle:lifecycle-livedata:2.6.2'
 
-	implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-	implementation 'com.google.android.material:material:1.9.0'
-	implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
+        implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+        implementation 'com.google.android.material:material:1.9.0'
+        implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
 
-	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-	implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
-	implementation "org.jsoup:jsoup:$jsoup_version"
-	implementation 'info.guardianproject.panic:panic:1.0'
-	implementation 'de.hdodenhof:circleimageview:3.1.0'
-	implementation 'com.google.zxing:core:3.3.3'
-	implementation 'uk.co.samuelwall:material-tap-target-prompt:3.3.2'
-	implementation 'com.vanniktech:emoji-google:0.9.0'
-	implementation 'com.github.kobakei:MaterialFabSpeedDial:1.2.1'
-	implementation 'com.github.chrisbanes:PhotoView:2.3.0'
-	def glideVersion = '4.16.0'
-	implementation("com.github.bumptech.glide:glide:$glideVersion") {
-		exclude group: 'com.android.support'
-		exclude module: 'disklrucache'
-	}
-	implementation 'org.nanohttpd:nanohttpd:2.3.1'
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+        implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+        implementation "org.jsoup:jsoup:$jsoup_version"
+        implementation 'info.guardianproject.panic:panic:1.0'
+        implementation 'de.hdodenhof:circleimageview:3.1.0'
+        implementation 'com.google.zxing:core:3.3.3'
+        implementation 'uk.co.samuelwall:material-tap-target-prompt:3.3.2'
+        implementation 'com.vanniktech:emoji-google:0.9.0'
+        implementation 'com.airbnb.android:lottie:6.1.0'
+        implementation 'com.github.kobakei:MaterialFabSpeedDial:1.2.1'
+        implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+        def glideVersion = '4.16.0'
+        implementation("com.github.bumptech.glide:glide:$glideVersion") {
+                exclude group: 'com.android.support'
+                exclude module: 'disklrucache'
+        }
+        implementation 'org.nanohttpd:nanohttpd:2.3.1'
 
-	annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
-	annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+        annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+        annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
 
-	compileOnly 'javax.annotation:jsr250-api:1.0'
+        compileOnly 'javax.annotation:jsr250-api:1.0'
 
-	testImplementation project(path: ':bramble-api', configuration: 'testOutput')
-	testImplementation project(path: ':bramble-core', configuration: 'testOutput')
+        testImplementation project(path: ':bramble-api', configuration: 'testOutput')
+        testImplementation project(path: ':bramble-core', configuration: 'testOutput')
 
-	def espressoVersion = '3.3.0'
-	testImplementation 'androidx.test:runner:1.4.0'
-	testImplementation 'androidx.test.ext:junit:1.1.5'
-	testImplementation 'androidx.fragment:fragment-testing:1.4.0'
-	testImplementation "androidx.arch.core:core-testing:2.1.0"
-	testImplementation "androidx.test.espresso:espresso-core:3.5.0"
-	testImplementation 'org.robolectric:robolectric:4.8.2'
-	testImplementation 'org.mockito:mockito-core:5.1.1'
-	testImplementation "junit:junit:$junit_version"
-	testImplementation "org.jmock:jmock:$jmock_version"
-	testImplementation "org.jmock:jmock-junit4:$jmock_version"
-	testImplementation "org.jmock:jmock-imposters:$jmock_version"
+        def espressoVersion = '3.3.0'
+        testImplementation 'androidx.test:runner:1.4.0'
+        testImplementation 'androidx.test.ext:junit:1.1.5'
+        testImplementation 'androidx.fragment:fragment-testing:1.4.0'
+        testImplementation "androidx.arch.core:core-testing:2.1.0"
+        testImplementation "androidx.test.espresso:espresso-core:3.5.0"
+        testImplementation 'org.robolectric:robolectric:4.8.2'
+        testImplementation 'org.mockito:mockito-core:5.1.1'
+        testImplementation "junit:junit:$junit_version"
+        testImplementation "org.jmock:jmock:$jmock_version"
+        testImplementation "org.jmock:jmock-junit4:$jmock_version"
+        testImplementation "org.jmock:jmock-imposters:$jmock_version"
 
-	testAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+        testAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
 
-	androidTestImplementation project(path: ':bramble-api', configuration: 'testOutput')
+        androidTestImplementation project(path: ':bramble-api', configuration: 'testOutput')
 
-	androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-	androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
-	androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
-	androidTestImplementation "androidx.test.espresso:espresso-intents:$espressoVersion"
-	androidTestImplementation 'androidx.test:runner:1.3.0'
-	androidTestImplementation "junit:junit:$junit_version"
+        androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+        androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+        androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
+        androidTestImplementation "androidx.test.espresso:espresso-intents:$espressoVersion"
+        androidTestImplementation 'androidx.test:runner:1.3.0'
+        androidTestImplementation "junit:junit:$junit_version"
 
-	androidTestImplementation('org.jmock:jmock:2.12.0') {
-		exclude group: 'net.jcip', module: 'jcip-annotations'
-		exclude group: 'com.google.code.findbugs', module: 'annotations'
-	}
-	androidTestImplementation('org.jmock:jmock-legacy:2.12.0') {
-		exclude group: 'net.jcip', module: 'jcip-annotations'
-		exclude group: 'com.google.code.findbugs', module: 'annotations'
-	}
-	androidTestImplementation 'org.objenesis:objenesis:3.3'
-	androidTestImplementation('cglib:cglib:3.3.0') {
-		exclude group: 'org.apache.ant', module: 'ant'
-	}
+        androidTestImplementation('org.jmock:jmock:2.12.0') {
+                exclude group: 'net.jcip', module: 'jcip-annotations'
+                exclude group: 'com.google.code.findbugs', module: 'annotations'
+        }
+        androidTestImplementation('org.jmock:jmock-legacy:2.12.0') {
+                exclude group: 'net.jcip', module: 'jcip-annotations'
+                exclude group: 'com.google.code.findbugs', module: 'annotations'
+        }
+        androidTestImplementation 'org.objenesis:objenesis:3.3'
+        androidTestImplementation('cglib:cglib:3.3.0') {
+                exclude group: 'org.apache.ant', module: 'ant'
+        }
 
-	androidTestUtil 'androidx.test:orchestrator:1.3.0'
+        androidTestUtil 'androidx.test:orchestrator:1.3.0'
 
-	androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+        androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
 
-	androidTestCompileOnly 'javax.annotation:jsr250-api:1.0'
+        androidTestCompileOnly 'javax.annotation:jsr250-api:1.0'
 
-	androidTestScreenshotImplementation 'tools.fastlane:screengrab:2.1.1'
-	androidTestScreenshotImplementation 'com.jraska:falcon:2.2.0'
-	androidTestScreenshotImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+        androidTestScreenshotImplementation 'tools.fastlane:screengrab:2.1.1'
+        androidTestScreenshotImplementation 'com.jraska:falcon:2.2.0'
+        androidTestScreenshotImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
 
-	implementation 'androidx.multidex:multidex:2.0.1'
+        implementation 'androidx.multidex:multidex:2.0.1'
 }
 
 task verifyTranslations {
-	doLast {
-		println "Translation verification is disabled - skipping"
-		// Пустая задача - ничего не делает
-	}
+        doLast {
+                println "Translation verification is disabled - skipping"
+                // Пустая задача - ничего не делает
+        }
 }
 
 // Force evaluation of bramble-android before briar-android
 project.evaluationDependsOn(project.getRootProject().findProject("bramble-android").getPath())
 project.afterEvaluate {
-	preBuild.dependsOn.add(verifyTranslations)
+        preBuild.dependsOn.add(verifyTranslations)
 }
 
 configurations {
-	all {
-		exclude group: 'net.jcip', module: 'jcip-annotations'
-		exclude group: 'org.apache.ant', module: 'ant'
-	}
+        all {
+                exclude group: 'net.jcip', module: 'jcip-annotations'
+                exclude group: 'org.apache.ant', module: 'ant'
+        }
 }

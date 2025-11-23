@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="select_animated_emoji">Select Animated Emoji</string>
+	<string name="no_emoji">No Emoji</string>
+	<string name="message_reactions">Reactions</string>
+	<string name="double_tap_to_like">Double tap to like</string>
+	<string name="liked">Liked</string>
+</resources>

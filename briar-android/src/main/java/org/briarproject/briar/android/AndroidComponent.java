@@ -94,172 +94,173 @@ import dagger.Component;
 
 @Singleton
 @Component(modules = {
-		BrambleCoreModule.class,
-		BriarCoreModule.class,
-		BrambleAndroidModule.class,
-		BriarAccountModule.class,
-		AppModule.class,
-		AttachmentModule.class,
-		ClockModule.class,
-		MediaModule.class,
-		ModularMailboxModule.class,
-		RemovableDriveModule.class
+                BrambleCoreModule.class,
+                BriarCoreModule.class,
+                BrambleAndroidModule.class,
+                BriarAccountModule.class,
+                AppModule.class,
+                AttachmentModule.class,
+                ClockModule.class,
+                MediaModule.class,
+                ModularMailboxModule.class,
+                RemovableDriveModule.class,
+                org.briarproject.briar.android.emoji.EmojiModule.class
 })
 public interface AndroidComponent
-		extends BrambleCoreEagerSingletons, BrambleAndroidEagerSingletons,
-		BriarCoreEagerSingletons, AndroidEagerSingletons, BrambleAppComponent {
+                extends BrambleCoreEagerSingletons, BrambleAndroidEagerSingletons,
+                BriarCoreEagerSingletons, AndroidEagerSingletons, BrambleAppComponent {
 
-	// Exposed objects
-	@CryptoExecutor
-	Executor cryptoExecutor();
+        // Exposed objects
+        @CryptoExecutor
+        Executor cryptoExecutor();
 
-	PasswordStrengthEstimator passwordStrengthIndicator();
+        PasswordStrengthEstimator passwordStrengthIndicator();
 
-	@DatabaseExecutor
-	Executor databaseExecutor();
+        @DatabaseExecutor
+        Executor databaseExecutor();
 
-	TransactionManager transactionManager();
+        TransactionManager transactionManager();
 
-	MessageTracker messageTracker();
+        MessageTracker messageTracker();
 
-	LifecycleManager lifecycleManager();
+        LifecycleManager lifecycleManager();
 
-	IdentityManager identityManager();
+        IdentityManager identityManager();
 
-	AttachmentReader attachmentReader();
+        AttachmentReader attachmentReader();
 
-	AuthorManager authorManager();
+        AuthorManager authorManager();
 
-	PluginManager pluginManager();
+        PluginManager pluginManager();
 
-	EventBus eventBus();
+        EventBus eventBus();
 
-	AndroidNotificationManager androidNotificationManager();
+        AndroidNotificationManager androidNotificationManager();
 
-	ScreenFilterMonitor screenFilterMonitor();
+        ScreenFilterMonitor screenFilterMonitor();
 
-	ConnectionRegistry connectionRegistry();
+        ConnectionRegistry connectionRegistry();
 
-	ContactManager contactManager();
+        ContactManager contactManager();
 
-	ConversationManager conversationManager();
+        ConversationManager conversationManager();
 
-	MessagingManager messagingManager();
+        MessagingManager messagingManager();
 
-	PrivateMessageFactory privateMessageFactory();
+        PrivateMessageFactory privateMessageFactory();
 
-	PrivateGroupManager privateGroupManager();
+        PrivateGroupManager privateGroupManager();
 
-	GroupInvitationFactory groupInvitationFactory();
+        GroupInvitationFactory groupInvitationFactory();
 
-	GroupInvitationManager groupInvitationManager();
+        GroupInvitationManager groupInvitationManager();
 
-	PrivateGroupFactory privateGroupFactory();
+        PrivateGroupFactory privateGroupFactory();
 
-	GroupMessageFactory groupMessageFactory();
+        GroupMessageFactory groupMessageFactory();
 
-	ForumManager forumManager();
+        ForumManager forumManager();
 
-	ForumSharingManager forumSharingManager();
+        ForumSharingManager forumSharingManager();
 
-	BlogSharingManager blogSharingManager();
+        BlogSharingManager blogSharingManager();
 
-	BlogManager blogManager();
+        BlogManager blogManager();
 
-	BlogPostFactory blogPostFactory();
+        BlogPostFactory blogPostFactory();
 
-	SettingsManager settingsManager();
+        SettingsManager settingsManager();
 
-	ContactExchangeManager contactExchangeManager();
+        ContactExchangeManager contactExchangeManager();
 
-	KeyAgreementTask keyAgreementTask();
+        KeyAgreementTask keyAgreementTask();
 
-	PayloadEncoder payloadEncoder();
+        PayloadEncoder payloadEncoder();
 
-	PayloadParser payloadParser();
+        PayloadParser payloadParser();
 
-	IntroductionManager introductionManager();
+        IntroductionManager introductionManager();
 
-	AndroidExecutor androidExecutor();
+        AndroidExecutor androidExecutor();
 
-	FeedManager feedManager();
+        FeedManager feedManager();
 
-	Clock clock();
+        Clock clock();
 
-	TestDataCreator testDataCreator();
+        TestDataCreator testDataCreator();
 
-	DozeWatchdog dozeWatchdog();
+        DozeWatchdog dozeWatchdog();
 
-	@IoExecutor
-	Executor ioExecutor();
+        @IoExecutor
+        Executor ioExecutor();
 
-	AccountManager accountManager();
+        AccountManager accountManager();
 
-	LockManager lockManager();
+        LockManager lockManager();
 
-	LocationUtils locationUtils();
+        LocationUtils locationUtils();
 
-	CircumventionProvider circumventionProvider();
+        CircumventionProvider circumventionProvider();
 
-	ViewModelProvider.Factory viewModelFactory();
+        ViewModelProvider.Factory viewModelFactory();
 
-	FeatureFlags featureFlags();
+        FeatureFlags featureFlags();
 
-	AndroidWakeLockManager wakeLockManager();
+        AndroidWakeLockManager wakeLockManager();
 
-	CachingLogHandler logHandler();
+        CachingLogHandler logHandler();
 
-	Thread.UncaughtExceptionHandler exceptionHandler();
+        Thread.UncaughtExceptionHandler exceptionHandler();
 
-	AutoDeleteManager autoDeleteManager();
+        AutoDeleteManager autoDeleteManager();
 
-	void inject(SignInReminderReceiver briarService);
+        void inject(SignInReminderReceiver briarService);
 
-	void inject(BriarService briarService);
+        void inject(BriarService briarService);
 
-	void inject(NotificationCleanupService notificationCleanupService);
+        void inject(NotificationCleanupService notificationCleanupService);
 
-	void inject(EmojiTextInputView textInputView);
+        void inject(EmojiTextInputView textInputView);
 
-	void inject(BriarModelLoader briarModelLoader);
+        void inject(BriarModelLoader briarModelLoader);
 
-	void inject(SettingsFragment settingsFragment);
+        void inject(SettingsFragment settingsFragment);
 
-	void inject(ConnectionsFragment connectionsFragment);
+        void inject(ConnectionsFragment connectionsFragment);
 
-	void inject(SecurityFragment securityFragment);
+        void inject(SecurityFragment securityFragment);
 
-	void inject(NotificationsFragment notificationsFragment);
+        void inject(NotificationsFragment notificationsFragment);
 
-	void inject(HotspotIntroFragment hotspotIntroFragment);
+        void inject(HotspotIntroFragment hotspotIntroFragment);
 
-	void inject(AbstractTabsFragment abstractTabsFragment);
+        void inject(AbstractTabsFragment abstractTabsFragment);
 
-	void inject(QrHotspotFragment qrHotspotFragment);
+        void inject(QrHotspotFragment qrHotspotFragment);
 
-	void inject(ManualHotspotFragment manualHotspotFragment);
+        void inject(ManualHotspotFragment manualHotspotFragment);
 
-	void inject(FallbackFragment fallbackFragment);
+        void inject(FallbackFragment fallbackFragment);
 
-	void inject(ChooserFragment chooserFragment);
+        void inject(ChooserFragment chooserFragment);
 
-	void inject(SendFragment sendFragment);
+        void inject(SendFragment sendFragment);
 
-	void inject(ReceiveFragment receiveFragment);
+        void inject(ReceiveFragment receiveFragment);
 
-	void inject(BluetoothIntroFragment bluetoothIntroFragment);
+        void inject(BluetoothIntroFragment bluetoothIntroFragment);
 
-	void inject(SetupIntroFragment setupIntroFragment);
+        void inject(SetupIntroFragment setupIntroFragment);
 
-	void inject(SetupDownloadFragment setupDownloadFragment);
+        void inject(SetupDownloadFragment setupDownloadFragment);
 
-	void inject(MailboxScanFragment mailboxScanFragment);
+        void inject(MailboxScanFragment mailboxScanFragment);
 
-	void inject(OfflineFragment offlineFragment);
+        void inject(OfflineFragment offlineFragment);
 
-	void inject(ErrorFragment errorFragment);
+        void inject(ErrorFragment errorFragment);
 
-	void inject(MailboxStatusFragment mailboxStatusFragment);
+        void inject(MailboxStatusFragment mailboxStatusFragment);
 
-	void inject(ErrorWizardFragment errorWizardFragment);
+        void inject(ErrorWizardFragment errorWizardFragment);
 }
