@@ -27,6 +27,7 @@ class ConversationMessageViewHolder extends ConversationItemViewHolder {
         private final ViewGroup statusLayout;
         private final RecyclerView reactionsRecyclerView;
         private final org.briarproject.briar.android.emoji.ReactionAdapter reactionAdapter;
+        private final org.briarproject.briar.android.emoji.MessageReactionManager reactionManager;
         private final int timeColor, timeColorBubble;
         private final ConstraintSet textConstraints = new ConstraintSet();
         private final ConstraintSet imageConstraints = new ConstraintSet();
@@ -35,8 +36,10 @@ class ConversationMessageViewHolder extends ConversationItemViewHolder {
 
         ConversationMessageViewHolder(View v, ConversationListener listener,
                         boolean isIncoming, RecycledViewPool imageViewPool,
-                        ImageItemDecoration imageItemDecoration) {
+                        ImageItemDecoration imageItemDecoration,
+                        org.briarproject.briar.android.emoji.MessageReactionManager reactionManager) {
                 super(v, listener, isIncoming);
+                this.reactionManager = reactionManager;
                 statusLayout = v.findViewById(R.id.statusLayout);
                 reactionsRecyclerView = v.findViewById(R.id.reactionsRecyclerView);
 
@@ -117,6 +120,18 @@ class ConversationMessageViewHolder extends ConversationItemViewHolder {
                         bindTextItem();
                 } else {
                         bindImageItem(item);
+                }
+                
+                // Load and display reactions
+                if (reactionAdapter != null && reactionsRecyclerView != null) {
+                        java.util.List<org.briarproject.briar.android.emoji.MessageReaction> reactions =
+                                        reactionManager.getReactions(item.getKey());
+                        if (reactions.isEmpty()) {
+                                reactionsRecyclerView.setVisibility(android.view.View.GONE);
+                        } else {
+                                reactionsRecyclerView.setVisibility(android.view.View.VISIBLE);
+                                reactionAdapter.setReactions(reactions);
+                        }
                 }
         }
 

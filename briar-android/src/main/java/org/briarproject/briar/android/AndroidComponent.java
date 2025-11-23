@@ -185,6 +185,10 @@ public interface AndroidComponent
 
         FeedManager feedManager();
 
+        org.briarproject.briar.android.emoji.AnimatedEmojiManager animatedEmojiManager();
+
+        org.briarproject.briar.android.emoji.MessageReactionManager messageReactionManager();
+
         Clock clock();
 
         TestDataCreator testDataCreator();
