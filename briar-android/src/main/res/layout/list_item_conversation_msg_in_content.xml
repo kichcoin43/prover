@@ -79,6 +79,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/reactionsRecyclerView">
 
+                <ImageButton
+                        android:id="@+id/likeButton"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Like message"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_heart"
+                        app:tint="?android:attr/textColorSecondary" />
+
                 <TextView
                         android:id="@+id/time"
                         style="@style/TextMessage.Timestamp"

@@ -23,11 +23,14 @@ import static androidx.core.widget.ImageViewCompat.setImageTintList;
 @NotNullByDefault
 class ConversationMessageViewHolder extends ConversationItemViewHolder {
 
+        private static final String LOCAL_USER_ID = "local_user";
+
         private final ImageAdapter adapter;
         private final ViewGroup statusLayout;
         private final RecyclerView reactionsRecyclerView;
         private final org.briarproject.briar.android.emoji.ReactionAdapter reactionAdapter;
         private final org.briarproject.briar.android.emoji.MessageReactionManager reactionManager;
+        private final android.widget.ImageButton likeButton;
         private final int timeColor, timeColorBubble;
         private final ConstraintSet textConstraints = new ConstraintSet();
         private final ConstraintSet imageConstraints = new ConstraintSet();
@@ -102,6 +105,38 @@ class ConversationMessageViewHolder extends ConversationItemViewHolder {
                         gestureDetector.onTouchEvent(event);
                         return false;
                 });
+
+                // Setup like button
+                likeButton = v.findViewById(R.id.likeButton);
+                if (likeButton != null) {
+                        likeButton.setOnClickListener(view -> {
+                                ConversationItem item = getCurrentItem();
+                                if (item instanceof ConversationMessageItem) {
+                                        ConversationMessageItem msgItem = (ConversationMessageItem) item;
+                                        String messageId = msgItem.getKey();
+                                        
+                                        List<org.briarproject.briar.android.emoji.MessageReaction> currentReactions =
+                                                        reactionManager.getReactions(messageId);
+                                        boolean hasReaction = false;
+                                        for (org.briarproject.briar.android.emoji.MessageReaction reaction : currentReactions) {
+                                                if (reaction.getAuthorId().equals(LOCAL_USER_ID)) {
+                                                        hasReaction = true;
+                                                        break;
+                                                }
+                                        }
+                                        
+                                        if (hasReaction) {
+                                                reactionManager.removeReaction(messageId, LOCAL_USER_ID);
+                                        } else {
+                                                reactionManager.addReaction(messageId, LOCAL_USER_ID, "❤");
+                                        }
+                                        
+                                        // Update UI immediately
+                                        updateLikeButtonState(messageId);
+                                        updateReactionsDisplay(messageId);
+                                }
+                        });
+                }
         }
 
         private ConversationItem currentItem = null;
@@ -123,14 +158,40 @@ class ConversationMessageViewHolder extends ConversationItemViewHolder {
                 }
                 
                 // Load and display reactions
+                String messageId = item.getKey();
+                updateReactionsDisplay(messageId);
+                updateLikeButtonState(messageId);
+        }
+
+        private void updateReactionsDisplay(String messageId) {
                 if (reactionAdapter != null && reactionsRecyclerView != null) {
                         java.util.List<org.briarproject.briar.android.emoji.MessageReaction> reactions =
-                                        reactionManager.getReactions(item.getKey());
+                                        reactionManager.getReactions(messageId);
                         if (reactions.isEmpty()) {
                                 reactionsRecyclerView.setVisibility(android.view.View.GONE);
                         } else {
                                 reactionsRecyclerView.setVisibility(android.view.View.VISIBLE);
                                 reactionAdapter.setReactions(reactions);
+                        }
+                }
+        }
+
+        private void updateLikeButtonState(String messageId) {
+                if (likeButton != null) {
+                        java.util.List<org.briarproject.briar.android.emoji.MessageReaction> currentReactions =
+                                        reactionManager.getReactions(messageId);
+                        boolean hasReaction = false;
+                        for (org.briarproject.briar.android.emoji.MessageReaction reaction : currentReactions) {
+                                if (reaction.getAuthorId().equals(LOCAL_USER_ID)) {
+                                        hasReaction = true;
+                                        break;
+                                }
+                        }
+                        
+                        if (hasReaction) {
+                                likeButton.setImageResource(R.drawable.ic_heart_filled);
+                        } else {
+                                likeButton.setImageResource(R.drawable.ic_heart);
                         }
                 }
         }
