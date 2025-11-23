@@ -1,0 +1,259 @@
+g  I  WindowManagerGlobal#addView, ty=2, view=com.android.internal.policy.DecorView{637bc51 V.ED.V... R.....I. 0,0-0,0}[SettingsActivity], caller=android.view.WindowManagerImpl.addView:158 android.app.Dialog.show:540 androidx.fragment.app.DialogFragment.onStart:993 
+2025-11-23 04:46:29.498 17405-17405 ViewRootImpl            org...arproject.briar.android.debug  I  dVRR is disabled
+2025-11-23 04:46:29.499 17405-17526 NativeCust...ncyManager org...arproject.briar.android.debug  D  [NativeCFMS] BpCustomFrequencyManager::BpCustomFrequencyManager()
+2025-11-23 04:46:29.504 17405-17405 InputTransport          org...arproject.briar.android.debug  D  Input channel constructed: '1700e80', fd=137
+2025-11-23 04:46:29.504 17405-17405 InsetsController        org...arproject.briar.android.debug  I  onStateChanged: host=org.briarproject.briar.android.debug/org.briarproject.briar.android.settings.SettingsActivity, from=android.view.ViewRootImpl.onInsetsStateChanged:3026, state=InsetsState: {mDisplayFrame=Rect(0, 0 - 1080, 2340), mDisplayCutout=DisplayCutout{insets=Rect(0, 89 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(507, 0 - 573, 89), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=1080 displayHeight=2340 physicalDisplayWidth=1080 physicalDisplayHeight=2340 density={2.8125} cutoutSpec={M 0,0 M 0,8.177777777777778 a 11.73333333333333,11.73333333333333 0 1,0 0,23.46666666666667 a 11.73333333333333,11.73333333333333 0 1,0 0,-23.46666666666667 Z @dp} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}} sideOverrides={}}, mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=126, center=Point(126, 126)}, RoundedCorner{position=TopRight, radius=126, center=Point(954, 126)}, RoundedCorner{position=BottomRight, radius=126, center=Point(954, 2214)}, RoundedCorner{position=BottomLeft, radius=126, center=Point(126, 2214)}]}  mRoundedCornerFrame=Rect(0, 0 - 1080, 2340), mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=Rect(948, 0 - 1080, 89) rotation=0}, mDisplayShape=DisplayShape{ spec=-311912193 displayWidth=1080 displayHeight=2340 physicalPixelDisplaySizeRatio=1.0 rotation=0 offsetX=0 offsetY=0 scale=1.0}, mSources= { InsetsSource: {c2c00001 mType=navigationBars mFrame=[0,2295][1080,2340] mVisible=true mFlags=SUPPRESS_SCRIM mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {c2c00004 mType=systemGestures mFrame=[0,0][119,2340] mVisible=true mFlags= mSideHint=LEFT mBoundingRects=null}, InsetsSource: {c2c00005 mType=mandatorySystemGestures mFrame=[0,2244][1080,2340] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {c2c00006 mType=tappableElement mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {c2c00024 mType=systemGestures mFrame=[961,0][1080,2340] mVisible=true mFlags= mSideHint=RIGHT mBoundingRects=null}, InsetsSource: {cca40000 mType=statusBars mFrame=[0,0][1080,89] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {cca40005 mType=mandatorySystemGestures mFrame=[0,0][1080,125] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {cca40006 mType=tappableElement mFrame=[0,0][1080,89] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {27 mType=displayCutout mFrame=[0,0][1080,89] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null} }
+2025-11-23 04:46:29.504 17405-17405 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  I  synced displayState. AttachInfo displayState=2
+2025-11-23 04:46:29.505 17405-17405 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  I  setView = com.android.internal.policy.DecorView@637bc51 IsHRR=false mFlingFrameRateChange=0 TM=true
+2025-11-23 04:46:29.530 17405-17405 InsetsSourceConsumer    org...arproject.briar.android.debug  I  applyRequestedVisibilityToControl: visible=true, type=statusBars, host=org.briarproject.briar.android.debug/org.briarproject.briar.android.settings.SettingsActivity
+2025-11-23 04:46:29.530 17405-17405 InsetsSourceConsumer    org...arproject.briar.android.debug  I  applyRequestedVisibilityToControl: visible=true, type=navigationBars, host=org.briarproject.briar.android.debug/org.briarproject.briar.android.settings.SettingsActivity
+2025-11-23 04:46:29.531 17405-17405 BLASTBufferQueue_Java   org...arproject.briar.android.debug  I  new BLASTBufferQueue, mName= VRI[SettingsActivity]@8c20cb6 mNativeObject= 0xb40000723428bc10 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3585 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 android.view.Choreographer.doCallbacks:1367 android.view.Choreographer.doFrame:1292 android.view.Choreographer$FrameDisplayEventReceiver.run:1870 
+2025-11-23 04:46:29.531 17405-17405 BLASTBufferQueue_Java   org...arproject.briar.android.debug  I  update, w= 1098 h= 2049 mName = VRI[SettingsActivity]@8c20cb6 mNativeObject= 0xb40000723428bc10 sc.mNativeObject= 0xb4000070741edc10 format= -3 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3590 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 
+2025-11-23 04:46:29.531 17405-17405 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  I  Relayout returned: old=(0,89,1080,2295) new=(27,203,1053,2180) relayoutAsync=false req=(1026,1977)0 dur=3 res=0x3 s={true 0xb400007104484700} ch=true seqId=0
+2025-11-23 04:46:29.532 17405-17405 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  I  performConfigurationChange setNightDimText nightDimLevel=0
+2025-11-23 04:46:29.532 17405-17405 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  D  mThreadedRenderer.initialize() mSurface={isValid=true 0xb400007104484700} hwInitialized=true
+2025-11-23 04:46:29.536 17405-17405 ScrollView              org...arproject.briar.android.debug  D   onsize change changed 
+2025-11-23 04:46:29.536 17405-17405 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  D  reportNextDraw android.view.ViewRootImpl.performTraversals:5443 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 
+2025-11-23 04:46:29.537 17405-17405 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  D  Setup new sync=wmsSync-VRI[SettingsActivity]@8c20cb6#20
+2025-11-23 04:46:29.537 17405-17405 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  I  Creating new active sync group VRI[SettingsActivity]@8c20cb6#21
+2025-11-23 04:46:29.537 17405-17405 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  D  registerCallbacksForSync syncBuffer=false
+2025-11-23 04:46:29.541 17405-17534 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  D  Received frameDrawingCallback syncResult=0 frameNum=1.
+2025-11-23 04:46:29.542 17405-17534 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  I  mWNT: t=0xb400007114213310 mBlastBufferQueue=0xb40000723428bc10 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$12.onFrameDraw:15441 android.view.ThreadedRenderer$1.onFrameDraw:718 <bottom of call stack> 
+2025-11-23 04:46:29.542 17405-17534 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  I  Setting up sync and frameCommitCallback
+2025-11-23 04:46:29.543 17405-17526 BLASTBufferQueue        org...arproject.briar.android.debug  I  [VRI[SettingsActivity]@8c20cb6#10](f:0,a:0,s:0) onFrameAvailable the first frame is available
+2025-11-23 04:46:29.543 17405-17526 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  I  Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+2025-11-23 04:46:29.544 17405-17526 HWUI                    org...arproject.briar.android.debug  D  CFMS:: SetUp Pid : 17405    Tid : 17526
+2025-11-23 04:46:29.544 17405-17405 VRI[Settin...y]@8c20cb6 org...arproject.briar.android.debug  D  reportDrawFinished seqId=0
+2025-11-23 04:46:29.545 17405-17526 HWUI                    org...arproject.briar.android.debug  D  HWUI - treat SMPTE_170M as sRGB
+2025-11-23 04:46:29.549 17405-17405 AndroidRuntime          org...arproject.briar.android.debug  D  Shutting down VM
+2025-11-23 04:46:29.549 17405-17405 AndroidRuntime          org...arproject.briar.android.debug  E  FATAL EXCEPTION: main (Ask Gemini)
+                                                                                                    Process: org.briarproject.briar.android.debug, PID: 17405
+                                                                                                    java.lang.IllegalStateException: Unable to parse composition
+                                                                                                    	at com.airbnb.lottie.LottieAnimationView.lambda$static$0(LottieAnimationView.java:75)
+                                                                                                    	at com.airbnb.lottie.LottieAnimationView$$ExternalSyntheticLambda1.onResult(D8$$SyntheticClass:0)
+                                                                                                    	at com.airbnb.lottie.LottieAnimationView$WeakFailureListener.onResult(LottieAnimationView.java:117)
+                                                                                                    	at com.airbnb.lottie.LottieAnimationView$WeakFailureListener.onResult(LottieAnimationView.java:99)
+                                                                                                    	at com.airbnb.lottie.LottieTask.notifyFailureListeners(LottieTask.java:162)
+                                                                                                    	at com.airbnb.lottie.LottieTask.lambda$notifyListeners$0$com-airbnb-lottie-LottieTask(LottieTask.java:138)
+                                                                                                    	at com.airbnb.lottie.LottieTask$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+                                                                                                    	at android.os.Handler.handleCallback(Handler.java:995)
+                                                                                                    	at android.os.Handler.dispatchMessage(Handler.java:103)
+                                                                                                    	at android.os.Looper.loopOnce(Looper.java:273)
+                                                                                                    	at android.os.Looper.loop(Looper.java:363)
+                                                                                                    	at android.app.ActivityThread.main(ActivityThread.java:10060)
+                                                                                                    	at java.lang.reflect.Method.invoke(Native Method)
+                                                                                                    	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:632)
+                                                                                                    	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:975)
+                                                                                                    Caused by: com.airbnb.lottie.parser.moshi.JsonEncodingException: Use JsonReader.setLenient(true) to accept malformed JSON at path $
+                                                                                                    	at com.airbnb.lottie.parser.moshi.JsonReader.syntaxError(JsonReader.java:251)
+                                                                                                    	at com.airbnb.lottie.parser.moshi.JsonUtf8Reader.checkLenient(JsonUtf8Reader.java:951)
+                                                                                                    	at com.airbnb.lottie.parser.moshi.JsonUtf8Reader.doPeek(JsonUtf8Reader.java:355)
+                                                                                                    	at com.airbnb.lottie.parser.moshi.JsonUtf8Reader.beginObject(JsonUtf8Reader.java:144)
+                                                                                                    	at com.airbnb.lottie.parser.LottieCompositionMoshiParser.parse(LottieCompositionMoshiParser.java:56)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.fromJsonReaderSyncInternal(LottieCompositionFactory.java:407)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.fromJsonReaderSync(LottieCompositionFactory.java:400)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.fromJsonInputStreamSync(LottieCompositionFactory.java:343)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.fromJsonInputStreamSync(LottieCompositionFactory.java:333)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.fromAssetSync(LottieCompositionFactory.java:220)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.lambda$fromAsset$1(LottieCompositionFactory.java:187)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory$$ExternalSyntheticLambda2.call(D8$$SyntheticClass:0)
+                                                                                                    	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+                                                                                                    	at java.lang.Thread.run(Thread.java:1119)
+2025-11-23 04:46:29.550 17405-17405 Uncaught exception      org...arproject.briar.android.debug  W  java.lang.IllegalStateException: Unable to parse composition (Ask Gemini)
+                                                                                                    	at com.airbnb.lottie.LottieAnimationView.lambda$static$0(LottieAnimationView.java:75)
+                                                                                                    	at com.airbnb.lottie.LottieAnimationView$$ExternalSyntheticLambda1.onResult(D8$$SyntheticClass:0)
+                                                                                                    	at com.airbnb.lottie.LottieAnimationView$WeakFailureListener.onResult(LottieAnimationView.java:117)
+                                                                                                    	at com.airbnb.lottie.LottieAnimationView$WeakFailureListener.onResult(LottieAnimationView.java:99)
+                                                                                                    	at com.airbnb.lottie.LottieTask.notifyFailureListeners(LottieTask.java:162)
+                                                                                                    	at com.airbnb.lottie.LottieTask.lambda$notifyListeners$0$com-airbnb-lottie-LottieTask(LottieTask.java:138)
+                                                                                                    	at com.airbnb.lottie.LottieTask$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+                                                                                                    	at android.os.Handler.handleCallback(Handler.java:995)
+                                                                                                    	at android.os.Handler.dispatchMessage(Handler.java:103)
+                                                                                                    	at android.os.Looper.loopOnce(Looper.java:273)
+                                                                                                    	at android.os.Looper.loop(Looper.java:363)
+                                                                                                    	at android.app.ActivityThread.main(ActivityThread.java:10060)
+                                                                                                    	at java.lang.reflect.Method.invoke(Native Method)
+                                                                                                    	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:632)
+                                                                                                    	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:975)
+                                                                                                    Caused by: com.airbnb.lottie.parser.moshi.JsonEncodingException: Use JsonReader.setLenient(true) to accept malformed JSON at path $
+                                                                                                    	at com.airbnb.lottie.parser.moshi.JsonReader.syntaxError(JsonReader.java:251)
+                                                                                                    	at com.airbnb.lottie.parser.moshi.JsonUtf8Reader.checkLenient(JsonUtf8Reader.java:951)
+                                                                                                    	at com.airbnb.lottie.parser.moshi.JsonUtf8Reader.doPeek(JsonUtf8Reader.java:355)
+                                                                                                    	at com.airbnb.lottie.parser.moshi.JsonUtf8Reader.beginObject(JsonUtf8Reader.java:144)
+                                                                                                    	at com.airbnb.lottie.parser.LottieCompositionMoshiParser.parse(LottieCompositionMoshiParser.java:56)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.fromJsonReaderSyncInternal(LottieCompositionFactory.java:407)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.fromJsonReaderSync(LottieCompositionFactory.java:400)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.fromJsonInputStreamSync(LottieCompositionFactory.java:343)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.fromJsonInputStreamSync(LottieCompositionFactory.java:333)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.fromAssetSync(LottieCompositionFactory.java:220)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory.lambda$fromAsset$1(LottieCompositionFactory.java:187)
+                                                                                                    	at com.airbnb.lottie.LottieCompositionFactory$$ExternalSyntheticLambda2.call(D8$$SyntheticClass:0)
+                                                                                                    	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+                                                                                                    	at java.lang.Thread.run(Thread.java:1119)
+2025-11-23 04:46:29.559   846-846   SurfaceFlinger          surfaceflinger                       E  alpha changed 1.000 -> 0.000 - Surface(name=1700e80 org.briarproject.briar.android.debug/org.briarproject.briar.android.settings.SettingsActivity)/@0xd638ef3 - animation-leash of window_animation#15359
+2025-11-23 04:46:29.559   846-846   SurfaceFlinger          surfaceflinger                       E  alpha changed 0.000 -> 0.000 - Surface(name=1700e80 org.briarproject.briar.android.debug/org.briarproject.briar.android.settings.SettingsActivity)/@0xd638ef3 - animation-leash of window_animation#15359
+2025-11-23 04:46:29.567   846-846   SurfaceFlinger          surfaceflinger                       E  alpha changed 0.000 -> 0.142 - Surface(name=1700e80 org.briarproject.briar.android.debug/org.briarproject.briar.android.settings.SettingsActivity)/@0xd638ef3 - animation-leash of window_animation#15359
+2025-11-23 04:46:29.584 17405-17405 Process                 org...arproject.briar.android.debug  I  Sending signal. PID: 17405 SIG: 9
+2025-11-23 04:46:29.632  1033-1332  InputDispatcher         system_server                        E  channel '2ff1323 org.briarproject.briar.android.debug/org.briarproject.briar.android.settings.SettingsActivity' ~ Channel is unrecoverably broken and will be disposed!
+2025-11-23 04:46:29.633 18311-18311 r_error_handler         org...arproject.briar.android.debug  I  Late-enabling -Xcheck:jni
+2025-11-23 04:46:29.644  1033-1332  InputDispatcher         system_server                        E  channel '1700e80 org.briarproject.briar.android.debug/org.briarproject.briar.android.settings.SettingsActivity' ~ Channel is unrecoverably broken and will be disposed!
+2025-11-23 04:46:29.658 18311-18311 r_error_handler         org...arproject.briar.android.debug  I  Using CollectorTypeCMC GC.
+2025-11-23 04:46:29.667 18311-18311 nativeloader            org...arproject.briar.android.debug  D  Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+2025-11-23 04:46:29.672 18311-18311 ActivityThread          org...arproject.briar.android.debug  D  setConscryptValidator
+2025-11-23 04:46:29.672 18311-18311 ActivityThread          org...arproject.briar.android.debug  D  setConscryptValidator - put
+2025-11-23 04:46:29.688 18311-18311 ActivityThread          org...arproject.briar.android.debug  I  Relaunch all activities: onCoreSettingsChange
+2025-11-23 04:46:29.702 18311-18311 ApplicationLoaders      org...arproject.briar.android.debug  D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+2025-11-23 04:46:29.702 18311-18311 ApplicationLoaders      org...arproject.briar.android.debug  D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+2025-11-23 04:46:29.801  1033-1178  WindowManager           system_server                        E  win=Window{1700e80 u0 org.briarproject.briar.android.debug/org.briarproject.briar.android.settings.SettingsActivity EXITING} destroySurfaces: appStopped=false cleanupOnResume=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true win.mViewVisibility=0 caller=com.android.server.wm.WindowState.onExitAnimationDone:224 com.android.server.wm.WindowState.onAnimationFinished:161 com.android.server.wm.WindowContainer$$ExternalSyntheticLambda8.onAnimationFinished:3 com.android.server.wm.SurfaceAnimator$$ExternalSyntheticLambda0.onAnimationFinished:69 com.android.server.wm.LocalAnimationAdapter$$ExternalSyntheticLambda0.run:10 android.os.Handler.handleCallback:995 android.os.Handler.dispatchMessage:103 
+2025-11-23 04:46:29.810   846-846   SurfaceFlinger          surfaceflinger                       E  alpha changed 0.177 -> 0.000 - Surface(name=1700e80 org.briarproject.briar.android.debug/org.briarproject.briar.android.settings.SettingsActivity)/@0xd638ef3 - animation-leash of window_animation#15366
+2025-11-23 04:46:29.906 18311-18311 nativeloader            org...arproject.briar.android.debug  D  Configuring clns-9 for other apk /data/app/~~5qvfhJNebtiPk0C5svkA6w==/org.briarproject.briar.android.debug-wED0WjZmzjB2wyUqTTahsQ==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~5qvfhJNebtiPk0C5svkA6w==/org.briarproject.briar.android.debug-wED0WjZmzjB2wyUqTTahsQ==/lib/arm64:/data/app/~~5qvfhJNebtiPk0C5svkA6w==/org.briarproject.briar.android.debug-wED0WjZmzjB2wyUqTTahsQ==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/org.briarproject.briar.android.debug
+2025-11-23 04:46:29.908 18311-18311 CompatChangeReporter    org...arproject.briar.android.debug  D  Compat change id reported: 202956589; UID 10590; state: ENABLED
+2025-11-23 04:46:29.915 18311-18311 GraphicsEnvironment     org...arproject.briar.android.debug  V  Currently set values for:
+2025-11-23 04:46:29.915 18311-18311 GraphicsEnvironment     org...arproject.briar.android.debug  V    angle_gl_driver_selection_pkgs=[]
+2025-11-23 04:46:29.915 18311-18311 GraphicsEnvironment     org...arproject.briar.android.debug  V    angle_gl_driver_selection_values=[]
+2025-11-23 04:46:29.915 18311-18311 GraphicsEnvironment     org...arproject.briar.android.debug  V  org.briarproject.briar.android.debug is not listed in per-application setting
+2025-11-23 04:46:29.915 18311-18311 GraphicsEnvironment     org...arproject.briar.android.debug  V  ANGLE allowlist from config: 
+2025-11-23 04:46:29.915 18311-18311 GraphicsEnvironment     org...arproject.briar.android.debug  V  org.briarproject.briar.android.debug is not listed in ANGLE allowlist or settings, returning default
+2025-11-23 04:46:29.915 18311-18311 GraphicsEnvironment     org...arproject.briar.android.debug  V  Neither updatable production driver nor prerelease driver is supported.
+2025-11-23 04:46:29.945 18311-18311 Configuration           org...arproject.briar.android.debug  V  Updating configuration, locales updated from [ru_RU] to [ru]
+2025-11-23 04:46:29.985 18311-18311 CryptoComponentImpl     org...arproject.briar.android.debug  I  Default SecureRandom: AndroidOpenSSL SHA1PRNG
+2025-11-23 04:46:30.000 18311-18311 ashmem                  org...arproject.briar.android.debug  E  Pinning is deprecated since Android Q. Please use trim or other methods.
+2025-11-23 04:46:30.006 18311-18311 CryptoComponentImpl     org...arproject.briar.android.debug  I  Installed SecureRandom: UnixPRNG SHA1PRNG
+2025-11-23 04:46:30.139 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering executor TimeLoggingExecutor
+2025-11-23 04:46:30.139 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering executor ScheduledThreadPoolExecutor
+2025-11-23 04:46:30.142 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service AndroidTaskScheduler
+2025-11-23 04:46:30.142 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service CleanupManagerImpl
+2025-11-23 04:46:30.143 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering executor ThreadPoolExecutor
+2025-11-23 04:46:30.144 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service AndroidNetworkManager
+2025-11-23 04:46:30.145 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service AndroidBatteryManager
+2025-11-23 04:46:30.147 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service KeyManagerImpl
+2025-11-23 04:46:30.148 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook IdentityManagerImpl
+2025-11-23 04:46:30.148 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering executor TimeLoggingExecutor
+2025-11-23 04:46:30.149 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service ValidationManagerImpl
+2025-11-23 04:46:30.151 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook ClientVersioningManagerImpl
+2025-11-23 04:46:30.151 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service ClientVersioningManagerImpl
+2025-11-23 04:46:30.152 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook MailboxUpdateManagerImpl
+2025-11-23 04:46:30.153 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook TransportPropertyManagerImpl
+2025-11-23 04:46:30.155 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service PluginManagerImpl
+2025-11-23 04:46:30.190 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service MailboxClientManager
+2025-11-23 04:46:30.191 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service RendezvousPollerImpl
+2025-11-23 04:46:30.192 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook TransportKeyAgreementManagerImpl
+2025-11-23 04:46:30.194 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook AutoDeleteManagerImpl
+2025-11-23 04:46:30.194 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook AvatarManagerImpl
+2025-11-23 04:46:30.195 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook BlogManagerImpl
+2025-11-23 04:46:30.197 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook FeedManagerImpl
+2025-11-23 04:46:30.200 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook GroupInvitationManagerImpl
+2025-11-23 04:46:30.201 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook MessagingManagerImpl
+2025-11-23 04:46:30.203 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook ForumSharingManagerImpl
+2025-11-23 04:46:30.204 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook BlogSharingManagerImpl
+2025-11-23 04:46:30.206 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook IntroductionManagerImpl
+2025-11-23 04:46:30.210 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service AndroidNotificationManagerImpl
+2025-11-23 04:46:30.211 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service NetworkUsageMetricsImpl
+2025-11-23 04:46:30.211 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service DozeWatchdogImpl
+2025-11-23 04:46:30.214 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering service LockManagerImpl
+2025-11-23 04:46:30.214 18311-18311 LifecycleManagerImpl    org...arproject.briar.android.debug  I  Registering open database hook RecentEmojiImpl
+2025-11-23 04:46:30.215 18311-18311 BriarApplicationImpl    org...arproject.briar.android.debug  I  Created
+2025-11-23 04:46:30.251 18311-18311 StrictMode              org...arproject.briar.android.debug  D  StrictMode policy violation; ~duration=260 ms: android.os.strictmode.UnbufferedIoViolation (Ask Gemini)
+                                                                                                    	at android.os.StrictMode$AndroidBlockGuardPolicy.onUnbufferedIO(StrictMode.java:1711)
+                                                                                                    	at libcore.io.IoTracker.trackIo(IoTracker.java:35)
+                                                                                                    	at libcore.io.IoTracker.trackIo(IoTracker.java:45)
+                                                                                                    	at java.io.FileOutputStream.write(FileOutputStream.java:432)
+                                                                                                    	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+                                                                                                    	at java.io.DataOutputStream.writeUTF(DataOutputStream.java:401)
+                                                                                                    	at java.io.DataOutputStream.writeUTF(DataOutputStream.java:323)
+                                                                                                    	at org.briarproject.bramble.system.AbstractSecureRandomProvider.writeToEntropyPool(AbstractSecureRandomProvider.java:35)
+                                                                                                    	at org.briarproject.bramble.system.AndroidSecureRandomProvider.writeToEntropyPool(AndroidSecureRandomProvider.java:44)
+                                                                                                    	at org.briarproject.bramble.system.UnixSecureRandomProvider.writeSeed(UnixSecureRandomProvider.java:49)
+                                                                                                    	at org.briarproject.bramble.system.AndroidSecureRandomProvider.writeSeed(AndroidSecureRandomProvider.java:72)
+                                                                                                    	at org.briarproject.bramble.system.UnixSecureRandomProvider.getProvider(UnixSecureRandomProvider.java:41)
+                                                                                                    	at org.briarproject.bramble.crypto.CryptoComponentImpl.<init>(CryptoComponentImpl.java:86)
+                                                                                                    	at org.briarproject.bramble.crypto.CryptoModule.provideCryptoComponent(CryptoModule.java:32)
+                                                                                                    	at org.briarproject.bramble.crypto.CryptoModule_ProvideCryptoComponentFactory.provideCryptoComponent(CryptoModule_ProvideCryptoComponentFactory.java:51)
+                                                                                                    	at org.briarproject.bramble.crypto.CryptoModule_ProvideCryptoComponentFactory.get(CryptoModule_ProvideCryptoComponentFactory.java:40)
+                                                                                                    	at org.briarproject.bramble.crypto.CryptoModule_ProvideCryptoComponentFactory.get(CryptoModule_ProvideCryptoComponentFactory.java:13)
+                                                                                                    	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+                                                                                                    	at org.briarproject.bramble.sync.MessageFactoryImpl_Factory.get(MessageFactoryImpl_Factory.java:30)
+                                                                                                    	at org.briarproject.bramble.sync.MessageFactoryImpl_Factory.get(MessageFactoryImpl_Factory.java:11)
+                                                                                                    	at org.briarproject.bramble.sync.SyncModule_ProvideMessageFactoryFactory.get(SyncModule_ProvideMessageFactoryFactory.java:35)
+                                                                                                    	at org.briarproject.bramble.sync.SyncModule_ProvideMessageFactoryFactory.get(SyncModule_ProvideMessageFactoryFactory.java:12)
+                                                                                                    	at org.briarproject.bramble.db.DatabaseModule_ProvideDatabaseFactory.get(DatabaseModule_ProvideDatabaseFactory.java:45)
+                                                                                                    	at org.briarproject.bramble.db.DatabaseModule_ProvideDatabaseFactory.get(DatabaseModule_ProvideDatabaseFactory.java:15)
+                                                                                                    	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+                                                                                                    	at org.briarproject.bramble.db.DatabaseModule_ProvideDatabaseComponentFactory.get(DatabaseModule_ProvideDatabaseComponentFactory.java:49)
+                                                                                                    	at org.briarproject.bramble.db.DatabaseModule_ProvideDatabaseComponentFactory.get(DatabaseModule_ProvideDatabaseComponentFactory.java:16)
+                                                                                                    	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+                                                                                                    	at org.briarproject.bramble.lifecycle.LifecycleManagerImpl_Factory.get(LifecycleManagerImpl_Factory.java:39)
+                                                                                                    	at org.briarproject.bramble.lifecycle.LifecycleManagerImpl_Factory.get(LifecycleManagerImpl_Factory.java:13)
+                                                                                                    	at org.briarproject.bramble.lifecycle.LifecycleModule_ProvideLifecycleManagerFactory.get(LifecycleModule_ProvideLifecycleManagerFactory.java:35)
+                                                                                                    	at org.briarproject.bramble.lifecycle.LifecycleModule_ProvideLifecycleManagerFactory.get(LifecycleModule_ProvideLifecycleManagerFactory.java:12)
+                                                                                                    	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+                                                                                                    	at org.briarproject.bramble.cleanup.CleanupModule_ProvideCleanupManagerFactory.get(CleanupModule_ProvideCleanupManagerFactory.java:44)
+                                                                                                    	at org.briarproject.bramble.cleanup.CleanupModule_ProvideCleanupManagerFactory.get(CleanupModule_ProvideCleanupManagerFactory.java:14)
+                                                                                                    	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+                                                                                                    	at org.briarproject.briar.android.DaggerAndroidComponent$AndroidComponentImpl.injectEagerSingletons(DaggerAndroidComponent.java:3485)
+                                                                                                    	at org.briarproject.briar.android.DaggerAndroidComponent$AndroidComponentImpl.inject(DaggerAndroidComponent.java:2945)
+2025-11-23 04:46:30.251 18311-18311 StrictMode              org...arproject.briar.android.debug  D  	at org.briarproject.bramble.BrambleCoreEagerSingletons$Helper.injectEagerSingletons(BrambleCoreEagerSingletons.java:51) (Ask Gemini)
+                                                                                                    	at org.briarproject.briar.android.BriarApplicationImpl.createApplicationComponent(BriarApplicationImpl.java:98)
+                                                                                                    	at org.briarproject.briar.android.BriarApplicationImpl.onCreate(BriarApplicationImpl.java:65)
+                                                                                                    	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1384)
+                                                                                                    	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:8750)
+                                                                                                    	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+                                                                                                    	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2873)
+                                                                                                    	at android.os.Handler.dispatchMessage(Handler.java:110)
+                                                                                                    	at android.os.Looper.loopOnce(Looper.java:273)
+                                                                                                    	at android.os.Looper.loop(Looper.java:363)
+                                                                                                    	at android.app.ActivityThread.main(ActivityThread.java:10060)
+                                                                                                    	at java.lang.reflect.Method.invoke(Native Method)
+                                                                                                    	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:632)
+                                                                                                    	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:975)
+2025-11-23 04:46:30.253 18311-18311 StrictMode              org...arproject.briar.android.debug  D  StrictMode policy violation; ~duration=104 ms: android.os.strictmode.DiskReadViolation (Ask Gemini)
+                                                                                                    	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1722)
+                                                                                                    	at libcore.io.BlockGuardOs.access(BlockGuardOs.java:74)
+                                                                                                    	at libcore.io.ForwardingOs.access(ForwardingOs.java:128)
+                                                                                                    	at android.app.ActivityThread$AndroidOs.access(ActivityThread.java:9895)
+                                                                                                    	at java.io.UnixFileSystem.checkAccess(UnixFileSystem.java:332)
+                                                                                                    	at java.io.File.exists(File.java:829)
+                                                                                                    	at android.app.ContextImpl.getDataDir(ContextImpl.java:3506)
+                                                                                                    	at android.app.ContextImpl.getDir(ContextImpl.java:3525)
+                                                                                                    	at android.content.ContextWrapper.getDir(ContextWrapper.java:362)
+                                                                                                    	at org.briarproject.briar.android.AppModule.provideTorDirectory(AppModule.java:173)
+                                                                                                    	at org.briarproject.briar.android.AppModule_ProvideTorDirectoryFactory.provideTorDirectory(AppModule_ProvideTorDirectoryFactory.java:48)
+                                                                                                    	at org.briarproject.briar.android.AppModule_ProvideTorDirectoryFactory.get(AppModule_ProvideTorDirectoryFactory.java:39)
+                                                                                                    	at org.briarproject.briar.android.AppModule_ProvideTorDirectoryFactory.get(AppModule_ProvideTorDirectoryFactory.java:13)
+                                                                                                    	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+                                                                                                    	at org.briarproject.bramble.plugin.tor.AndroidTorPluginFactory_Factory.get(AndroidTorPluginFactory_Factory.java:111)
+                                                                                                    	at org.briarproject.bramble.plugin.tor.AndroidTorPluginFactory_Factory.get(AndroidTorPluginFactory_Factory.java:23)
+                                                                                                    	at org.briarproject.briar.android.AppModule_ProvidePluginConfigFactory.get(AppModule_ProvidePluginConfigFactory.java:64)
+                                                                                                    	at org.briarproject.briar.android.AppModule_ProvidePluginConfigFactory.get(AppModule_ProvidePluginConfigFactory.java:18)
+                                                                                                    	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+                                                                                                    	at org.briarproject.bramble.transport.KeyManagerImpl_Factory.get(KeyManagerImpl_Factory.java:48)
+                                                                                                    	at org.briarproject.bramble.transport.KeyManagerImpl_Factory.get(KeyManagerImpl_Factory.java:14)
+                                                                                                    	at org.briarproject.bramble.transport.TransportModule_ProvideKeyManagerFactory.get(TransportModule_ProvideKeyManagerFactory.java:44)
+                                                                                                    	at org.briarproject.bramble.transport.TransportModule_ProvideKeyManagerFactory.get(TransportModule_ProvideKeyManagerFactory.java:14)
+                                                                                                    	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+                                                                                                    	at org.briarproject.bramble.contact.ContactManagerImpl_Factory.get(ContactManagerImpl_Factory.java:43)
+                                                                                                    	at org.briarproject.bramble.contact.ContactManagerImpl_Factory.get(ContactManagerImpl_Factory.java:13)
+                                                                                                    	at org.briarproject.bramble.contact.ContactModule_ProvideContactManagerFactory.get(ContactModule_ProvideContactManagerFactory.java:39)
+                                                                                                    	at org.briarproject.bramble.contact.ContactModule_ProvideContactManagerFactory.get(ContactModule_ProvideContactManagerFactory.java:13)
+                                                                                                    	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+                                                                                                    	at org.briarproject.briar.android.DaggerAndroidComponent$AndroidComponentImpl.injectEagerSingletons2(DaggerAndroidComponent.java:3491)
+                                                                                                    	at org.briarproject.briar.android.DaggerAndroidComponent$AndroidComponentImpl.inject(DaggerAndroidComponent.java:2950)
+                                                                                                    	at org.briarproject.bramble.BrambleCoreEagerSingletons$Helper.injectEagerSingletons(BrambleCoreEagerSingletons.java:52)
+                                                                                                    	at org.briarproject.briar.android.BriarApplicationImpl.createApplicationComponent(BriarApplicationImpl.java:98)
+                                                                                                    	at org.briarproject.briar.android.BriarApplicationImpl.onCreate(BriarApplicationImpl.java:65)
+                                                                                                    	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1384)
+                                                                                                    	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:8750)
+                                                                                                    	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+                                                                                                    	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2873)
+                                                                                                    	at android.os.Handler.dispatchMessage(Handler.java:110)
+                                                                                                    	at android.os.Looper.loopOnce(Looper.java:273)
+                                                                                                    	at android.os.Looper.loop(Looper.java:363)
+                                                                                                    	at android.app.ActivityThread.main(ActivityThread.java:10060)
+                                                                                                    	at java.lang.reflect.Method.invoke(Native Method)
+                                                                                                    	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:632)
+2025-11-23 04:46:30.253 18311-18311 StrictMode              org...arproject.briar.android.debug  D  	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:975)
+2025-11-23 04:46:30.254 18311-18311 StrictMode              org...arproject.briar.android.debug  D  StrictMode policy viol
